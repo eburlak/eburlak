@@ -2,11 +2,12 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 import { ThemeToggle } from "@/components/theme-toggle";
+import { useActiveSection } from "@/hooks/use-active-section";
 import { profile } from "@/data/profile";
-import { dashedEdge, screenLineAfter } from "@/styles/mixins";
+import { dashedEdge } from "@/styles/mixins";
 import { color, font, layout, media } from "@/styles/theme";
 
 const Wrapper = styled.header<{ $scrolled: boolean }>`
@@ -20,8 +21,34 @@ const Wrapper = styled.header<{ $scrolled: boolean }>`
   transition: background-color 150ms ease;
 `;
 
+const progressGrow = keyframes`
+  from { scale: 0 1; }
+  to { scale: 1 1; }
+`;
+
+/** How far down the document the reader is - drawn by the scroll timeline itself. */
+const ScrollProgress = styled.span`
+  display: none;
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: ${color.foreground};
+  pointer-events: none;
+
+  @supports (animation-timeline: scroll()) {
+    @media (prefers-reduced-motion: no-preference) {
+      display: block;
+      transform-origin: left center;
+      scale: 0 1;
+      animation: ${progressGrow} linear both;
+      animation-timeline: scroll(root block);
+    }
+  }
+`;
+
 const Inner = styled.div`
-  ${screenLineAfter}
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -78,20 +105,24 @@ const NavLink = styled(Link)`
   color: ${color.mutedForeground};
   transition: color 150ms ease;
 
-  &:hover {
+  &:hover,
+  &[data-active="true"] {
     color: ${color.foreground};
   }
 `;
 
 const navItems = [
-  { href: "/#about", label: "About" },
-  { href: "/#stack", label: "Stack" },
-  { href: "/#experience", label: "Experience" },
-  { href: "/#projects", label: "Projects" },
+  { id: "about", href: "/#about", label: "About" },
+  { id: "stack", href: "/#stack", label: "Stack" },
+  { id: "experience", href: "/#experience", label: "Experience" },
+  { id: "projects", href: "/#projects", label: "Projects" },
 ];
+
+const navSectionIds = navItems.map((item) => item.id);
 
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
+  const activeId = useActiveSection(navSectionIds);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 16);
@@ -111,7 +142,12 @@ export function SiteHeader() {
         <Actions>
           <Nav>
             {navItems.map((item) => (
-              <NavLink key={item.href} href={item.href}>
+              <NavLink
+                key={item.href}
+                href={item.href}
+                data-active={item.id === activeId}
+                aria-current={item.id === activeId ? "true" : undefined}
+              >
                 {item.label}
               </NavLink>
             ))}
@@ -120,6 +156,8 @@ export function SiteHeader() {
           <ThemeToggle />
         </Actions>
       </Inner>
+
+      <ScrollProgress aria-hidden="true" />
     </Wrapper>
   );
 }

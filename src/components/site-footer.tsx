@@ -2,6 +2,7 @@
 
 import styled from "styled-components";
 
+import { Telemetry } from "@/components/telemetry";
 import { profile } from "@/data/profile";
 import { dashedEdge, screenLineBefore, stripes } from "@/styles/mixins";
 import { color, font, layout } from "@/styles/theme";
@@ -37,6 +38,7 @@ export function SiteFooter() {
   return (
     <Wrapper>
       <TopGutter />
+      <Telemetry />
       <Credits>
         <p>Built with Next.js and styled-components. Hosted on GitHub Pages.</p>
         <p>

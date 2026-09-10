@@ -13,9 +13,12 @@ export const font = {
   mono: "var(--font-mono)",
 } as const;
 
+const headerHeightPx = 56;
+
 export const layout = {
   contentWidth: "48rem",
-  headerHeight: "3.5rem",
+  headerHeightPx,
+  headerHeight: `${headerHeightPx / 16}rem`,
 } as const;
 
 export const media = {

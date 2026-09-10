@@ -12,4 +12,5 @@ export const MainColumn = styled.main`
   margin: 0 auto;
   border-left: ${dashedEdge};
   border-right: ${dashedEdge};
+  counter-reset: section;
 `;

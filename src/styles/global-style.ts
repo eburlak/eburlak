@@ -2,6 +2,7 @@
 
 import { createGlobalStyle } from "styled-components";
 
+import { easing } from "./motion";
 import { layout } from "./theme";
 
 export const GlobalStyle = createGlobalStyle`
@@ -92,6 +93,31 @@ export const GlobalStyle = createGlobalStyle`
     color: var(--background);
   }
 
+  /* Theme swap: the incoming palette is wiped in from the toggle that started it. */
+  [data-theme-switch="on"]::view-transition-old(root),
+  [data-theme-switch="on"]::view-transition-new(root) {
+    mix-blend-mode: normal;
+  }
+
+  [data-theme-switch="on"]::view-transition-old(root) {
+    animation: none;
+  }
+
+  [data-theme-switch="on"]::view-transition-new(root) {
+    animation: theme-wipe 620ms ${easing.entrance} both;
+  }
+
+  @keyframes theme-wipe {
+    from {
+      clip-path: circle(0 at var(--theme-switch-x) var(--theme-switch-y));
+    }
+    to {
+      clip-path: circle(
+        var(--theme-switch-radius) at var(--theme-switch-x) var(--theme-switch-y)
+      );
+    }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     html {
       scroll-behavior: auto;
@@ -101,6 +127,13 @@ export const GlobalStyle = createGlobalStyle`
       animation-duration: 0.01ms !important;
       animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;
+    }
+
+    ::view-transition-group(*),
+    ::view-transition-old(*),
+    ::view-transition-new(*) {
+      animation-duration: 0.01ms !important;
+      animation-delay: 0ms !important;
     }
   }
 `;

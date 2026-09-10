@@ -1,16 +1,15 @@
 "use client";
 
-import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import styled from "styled-components";
 
+import ArrowLeftIcon from "@/assets/icons/arrowLeft.svg";
+import { Icon } from "@/components/icon";
 import { MainColumn } from "@/components/main-column";
-import { screenLineAfter } from "@/styles/mixins";
 import { color, font } from "@/styles/theme";
 
 const Header = styled.div`
-  ${screenLineAfter}
   padding: 1.5rem 1rem;
 `;
 
@@ -62,7 +61,7 @@ export function PageShell({
     <MainColumn>
       <Header>
         <BackLink href="/">
-          <ArrowLeft />
+          <Icon as={ArrowLeftIcon} />
           Back to home
         </BackLink>
 

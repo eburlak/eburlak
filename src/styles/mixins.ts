@@ -4,7 +4,10 @@ import { color, font } from "./theme";
 
 export const dashedEdge = `1px dashed ${color.edge}`;
 
-/** Dashed rule anchored to the element edge but drawn across the whole viewport. */
+/**
+ * Dashed rule anchored to the element edge but drawn across the whole viewport.
+ * It sits on the element's own top edge, so a sticky element keeps it in view.
+ */
 export const screenLineBefore = css`
   position: relative;
 
@@ -14,7 +17,7 @@ export const screenLineBefore = css`
     top: 0;
     left: 50%;
     width: 100vw;
-    translate: -50% -1px;
+    translate: -50% 0;
     border-top: ${dashedEdge};
     pointer-events: none;
   }

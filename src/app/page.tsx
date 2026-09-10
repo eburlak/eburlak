@@ -3,7 +3,7 @@ import { EducationList } from "@/components/education-list";
 import { ExperienceList } from "@/components/experience-list";
 import { MainColumn } from "@/components/main-column";
 import { ProfileCard } from "@/components/profile-card";
-import { ProjectList } from "@/components/project-list";
+import { ProjectsSection } from "@/components/projects-section";
 import { Section } from "@/components/section";
 import { SocialLinks } from "@/components/social-links";
 import { TechStack } from "@/components/tech-stack";
@@ -29,9 +29,7 @@ export default function Home() {
         <ExperienceList />
       </Section>
 
-      <Section id="projects" title="Projects">
-        <ProjectList />
-      </Section>
+      <ProjectsSection />
 
       <Section id="education" title="Education">
         <EducationList />

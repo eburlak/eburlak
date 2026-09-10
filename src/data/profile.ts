@@ -1,5 +1,8 @@
-import { siGithub, siNpm, siTelegram, type SimpleIcon } from "simple-icons";
-import { Mail, type LucideIcon } from "lucide-react";
+import GithubIcon from "@/assets/icons/github.svg";
+import MailIcon from "@/assets/icons/mail.svg";
+import NpmIcon from "@/assets/icons/npm.svg";
+import TelegramIcon from "@/assets/icons/telegram.svg";
+import type { SvgIcon } from "@/components/icon";
 
 export const SITE_URL = "https://eburlak.github.io";
 
@@ -26,21 +29,18 @@ export type Social = {
   name: string;
   handle: string;
   href: string;
-  icon: SimpleIcon | LucideIcon;
+  icon: SvgIcon;
 };
 
 export const socials: Social[] = [
-  { name: "GitHub", handle: "@eburlak", href: "https://github.com/eburlak", icon: siGithub },
-  { name: "npm", handle: "@eburlak", href: "https://www.npmjs.com/~eburlak", icon: siNpm },
-  { name: "Telegram", handle: "@eburlak", href: "https://t.me/eburlak", icon: siTelegram },
+  { name: "GitHub", handle: "@eburlak", href: "https://github.com/eburlak", icon: GithubIcon },
+  { name: "npm", handle: "@eburlak", href: "https://www.npmjs.com/~eburlak", icon: NpmIcon },
+  { name: "Telegram", handle: "@eburlak", href: "https://t.me/eburlak", icon: TelegramIcon },
   {
     name: "Email",
     handle: "evgeniy.burlak@edna.io",
     href: "mailto:evgeniy.burlak@edna.io",
-    icon: Mail,
+    icon: MailIcon,
   },
 ];
 
-export function getIsBrandIcon(icon: SimpleIcon | LucideIcon): icon is SimpleIcon {
-  return "path" in icon;
-}

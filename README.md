@@ -13,11 +13,51 @@ All text lives in `src/data` - no content is hardcoded in components:
 | File                    | What it holds                                              |
 | ----------------------- | ---------------------------------------------------------- |
 | `src/data/profile.ts`   | name, job title, location, about paragraphs, social links   |
-| `src/data/stack.ts`     | tech stack icons (imported straight from [simple-icons](https://simpleicons.org)) |
+| `src/data/stack.ts`     | tech stack: name, link and the local icon of each tool      |
 | `src/data/experience.ts`| work history and education                                  |
-| `src/data/projects.ts`  | npm packages shown in the Projects section                  |
+| `src/data/projects.ts`  | npm packages shown in the Projects section (fallback data)   |
 
 Places still waiting for the real CV text are marked with `TODO:`.
+
+## Live package data
+
+The Projects section does not trust its own file for numbers: `src/hooks/use-npm-registry.ts`
+asks [registry.npmjs.org](https://registry.npmjs.org) (abbreviated packument) for the latest
+version and last change, and `api.npmjs.org` for last-week downloads, straight from the browser -
+the site stays a static export.
+
+While the requests are in flight the values are `src/components/skeleton.tsx` shimmer bars, the
+section header shows an ASCII spinner (`src/components/spinner.tsx`) and `reading registry`;
+skeletons are held for at least 450ms so the state reads as a state rather than a flash. When the
+data lands, the header switches to `npm live`, the download counter rolls up with
+`src/hooks/use-count-up.ts` and the version settles through `ScrambleText`. The reload button
+refetches on demand.
+
+If npm cannot be reached the header says `cached`, versions fall back to `src/data/projects.ts`
+and a missing number renders as `n/a` - never an endless skeleton.
+
+## Icons
+
+UI icons are plain SVG files in `src/assets/icons`, one per icon, named in camelCase and drawn
+with `currentColor` so they inherit the text colour. `@svgr/webpack` (wired up through the
+`turbopack.rules` entry in `next.config.ts`) turns every import into a React component:
+
+```tsx
+import ArrowLeftIcon from "@/assets/icons/arrowLeft.svg";
+import { Icon } from "@/components/icon";
+
+<Icon as={ArrowLeftIcon} />;
+```
+
+`src/components/icon.tsx` is the single sizing base (1rem, `flex-shrink: 0`) that every icon on
+the page goes through; wherever a place needs another size, the parent styled-component keeps
+overriding it with its own `svg { ... }` rule.
+
+Brand marks live in the same folder and work the same way - no icon package at runtime. To add
+one, download the SVG from [simple-icons](https://simpleicons.org) (CC0), strip its `width`,
+`height` and `title`, and set `fill="currentColor"` on the root so it follows the text colour.
+A few marks are missing from that set - LinkedIn, for one, was withdrawn from it - and come
+from [bootstrap-icons](https://icons.getbootstrap.com) (MIT) instead.
 
 ## Styling
 
@@ -42,8 +82,13 @@ sections. The building blocks:
 | Component      | What it gives you                                                     |
 | -------------- | ---------------------------------------------------------------------- |
 | `PageShell`    | dashed column, back link, page title and description, closing gutter    |
-| `Section`      | dashed heading bar with a mono uppercase title plus a screen-wide rule  |
+| `Section`      | sticky heading bar: auto number, mono uppercase title, screen-wide rule |
 | `SectionBody`  | padded muted body text with spacing between paragraphs                  |
+
+Section numbers are a CSS counter: `MainColumn` resets it, every `Section` increments it, so
+adding or reordering sections renumbers them with no prop to pass. Heading bars stick below the
+site header while their own section is on screen, which is why `scroll-padding-top` in
+`src/styles/global-style.ts` reserves room for both bars.
 
 `src/app/not-found.tsx` is the 404 page; the static export writes it to `out/404.html`, which is
 exactly what GitHub Pages serves for unknown paths.

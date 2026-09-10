@@ -1,17 +1,19 @@
 "use client";
 
-import { BadgeCheck, MapPin } from "lucide-react";
 import Image from "next/image";
 import styled from "styled-components";
 
+import LocationIcon from "@/assets/icons/location.svg";
+import VerifiedIcon from "@/assets/icons/verified.svg";
+import { Icon } from "@/components/icon";
 import { ScrambleText } from "@/components/scramble-text";
 
 import { profile } from "@/data/profile";
-import { dashedEdge, screenLineAfter } from "@/styles/mixins";
+import { dashedEdge, screenLineBefore } from "@/styles/mixins";
 import { color, font, media } from "@/styles/theme";
 
 const Wrapper = styled.div`
-  ${screenLineAfter}
+  ${screenLineBefore}
   display: flex;
 `;
 
@@ -141,7 +143,7 @@ export function ProfileCard() {
       <Details>
         <Name>
           <ScrambleText text={profile.name} />
-          <BadgeCheck aria-label="verified" />
+          <Icon as={VerifiedIcon} aria-label="verified" />
         </Name>
 
         <JobTitle>
@@ -149,7 +151,7 @@ export function ProfileCard() {
         </JobTitle>
 
         <Location href={profile.locationLink} target="_blank" rel="noreferrer noopener">
-          <MapPin />
+          <Icon as={LocationIcon} />
           {profile.location}
         </Location>
 
