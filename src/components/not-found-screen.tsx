@@ -9,11 +9,11 @@ import ArrowLeftIcon from "@/assets/icons/arrowLeft.svg";
 import { GlitchSlices } from "@/components/Glitch/glitch-slices";
 import { Icon } from "@/components/Icon";
 import { ScrambleText } from "@/components/scramble-text";
-import { dashedEdge, screenLineAfter, screenLineBefore } from "@/styles/mixins";
+import { dashedEdge, screenLineAfter } from "@/styles/mixins";
+import { duration, easing } from "@/styles/motion";
 import { color, font } from "@/styles/theme";
 
 const Wrapper = styled.div`
-  ${screenLineBefore}
   ${screenLineAfter}
   display: flex;
   min-height: 60vh;
@@ -70,8 +70,8 @@ const HomeLink = styled(Link)`
   font-family: ${font.mono};
   font-size: 12px;
   transition:
-    background-color 150ms ease,
-    scale 260ms cubic-bezier(0.34, 1.42, 0.64, 1);
+    background-color ${duration.fast}ms ease,
+    scale ${duration.base}ms ${easing.spring};
 
   &:hover {
     background-color: ${color.accent};
@@ -85,7 +85,7 @@ const HomeLink = styled(Link)`
   svg {
     width: 14px;
     height: 14px;
-    transition: translate 260ms cubic-bezier(0.34, 1.42, 0.64, 1);
+    transition: translate ${duration.base}ms ${easing.spring};
   }
 
   &:hover svg {

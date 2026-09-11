@@ -1,0 +1,57 @@
+- generic [active] [ref=f1e1]:
+  - banner [ref=f1e2]:
+    - generic [ref=f1e3]:
+      - link "Evgeniy Burlak" [ref=f1e4] [cursor=pointer]:
+        - /url: /#top
+      - generic [ref=f1e8]:
+        - navigation [ref=f1e9]:
+          - link "About" [ref=f1e10] [cursor=pointer]:
+            - /url: /#about
+          - link "Stack" [ref=f1e11] [cursor=pointer]:
+            - /url: /#stack
+          - link "Experience" [ref=f1e12] [cursor=pointer]:
+            - /url: /#experience
+          - link "Projects" [ref=f1e13] [cursor=pointer]:
+            - /url: /#projects
+        - generic [ref=f1e14]:
+          - button "Switch to system theme" [ref=f1e15] [cursor=pointer]
+          - button "Switch to light theme" [ref=f1e19] [cursor=pointer]
+          - button "Switch to dark theme" [pressed] [ref=f1e23] [cursor=pointer]
+  - main [ref=f1e26]:
+    - generic [ref=f1e27]:
+      - paragraph [ref=f1e29]:
+        - text: "404"
+        - generic [aria-hidden] [ref=f1e30]: "404"
+        - generic [aria-hidden] [ref=f1e31]: "404"
+        - generic [aria-hidden] [ref=f1e32]: "404"
+        - generic [aria-hidden] [ref=f1e33]: "404"
+        - generic [aria-hidden] [ref=f1e34]: "404"
+        - generic [aria-hidden] [ref=f1e35]: "404"
+        - generic [aria-hidden] [ref=f1e36]: "404"
+        - generic [aria-hidden] [ref=f1e37]: "404"
+      - paragraph [ref=f1e38]: Page not found
+      - paragraph [ref=f1e39]:
+        - generic [ref=f1e40]: GET
+        - code [ref=f1e41]:
+          - generic [ref=f1e42]: /nope/
+          - text: /nope/
+        - generic [ref=f1e43]: "-> 404"
+      - paragraph [ref=f1e44]: The page you are looking for has been moved, renamed, or never existed in the first place.
+      - link "Back to home" [ref=f1e45] [cursor=pointer]:
+        - /url: /
+  - contentinfo [ref=f1e48]:
+    - generic [ref=f1e50]:
+      - generic [ref=f1e51]:
+        - text: uptime
+        - generic [ref=f1e52]: "--:--.-"
+      - generic [ref=f1e53]:
+        - text: fps
+        - generic [ref=f1e54]: "--"
+      - generic [ref=f1e56]:
+        - text: viewport
+        - generic [ref=f1e57]: "--"
+    - generic [ref=f1e58]:
+      - paragraph [ref=f1e59]: Built with Next.js and styled-components. Hosted on GitHub Pages.
+      - paragraph [ref=f1e60]: © 2026 Evgeniy Burlak
+  - button "Open Next.js Dev Tools" [ref=f1e66] [cursor=pointer]
+  - alert [ref=f1e70]

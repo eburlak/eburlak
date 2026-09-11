@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import { Telemetry } from '@/components/telemetry';
 import { profile } from '@/data/profile';
-import { dashedEdge, screenLineBefore, stripes } from '@/styles/mixins';
+import { dashedEdge, stripes } from '@/styles/mixins';
 import { color, font, layout } from '@/styles/theme';
 
 const Wrapper = styled.footer`
@@ -16,7 +16,6 @@ const Wrapper = styled.footer`
 `;
 
 const TopGutter = styled.div`
-  ${screenLineBefore}
   ${stripes}
   width: 100%;
   height: 32px;

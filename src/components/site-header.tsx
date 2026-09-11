@@ -7,12 +7,13 @@ import styled, { keyframes } from 'styled-components';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { useActiveSection } from '@/hooks/use-active-section';
 import { profile } from '@/data/profile';
-import { dashedEdge } from '@/styles/mixins';
+import { dashedEdge, screenLineAfter } from '@/styles/mixins';
 import { color, font, layout, media } from '@/styles/theme';
 import { Icon } from './Icon';
 import BlobIcon from '@/assets/icons/blob.svg';
 
 const Wrapper = styled.header<{ $scrolled: boolean }>`
+  ${screenLineAfter}
   position: sticky;
   top: 0;
   z-index: 50;
@@ -34,8 +35,9 @@ const progressGrow = keyframes`
 const ScrollProgress = styled.span`
   display: none;
   position: absolute;
-  bottom: -1px;
+  bottom: 0;
   left: 0;
+  z-index: 1;
   width: 100%;
   height: 1px;
   background-color: ${color.foreground};

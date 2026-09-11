@@ -1,0 +1,257 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "Evgeniy Burlak" [ref=e4] [cursor=pointer]:
+        - /url: /#top
+      - generic [ref=e8]:
+        - navigation [ref=e9]:
+          - link "About" [ref=e10] [cursor=pointer]:
+            - /url: /#about
+          - link "Stack" [ref=e11] [cursor=pointer]:
+            - /url: /#stack
+          - link "Experience" [ref=e12] [cursor=pointer]:
+            - /url: /#experience
+          - link "Projects" [ref=e13] [cursor=pointer]:
+            - /url: /#projects
+        - generic [ref=e14]:
+          - button "Switch to system theme" [ref=e15] [cursor=pointer]
+          - button "Switch to light theme" [ref=e19] [cursor=pointer]
+          - button "Switch to dark theme" [ref=e23] [cursor=pointer]
+  - main [ref=e26]:
+    - generic [ref=e27]:
+      - img "Evgeniy Burlak" [ref=e29]
+      - generic [ref=e30]:
+        - heading [level=1] [ref=e31]:
+          - text: Evgeniy Burlak
+          - img "verified" [ref=e32]
+        - paragraph [ref=e35]:
+          - text: Senior Frontend Developer at
+          - strong [ref=e36]: edna
+        - link "Russia" [ref=e37] [cursor=pointer]:
+          - /url: https://www.google.com/maps/place/Russia
+        - paragraph [ref=e41]: Open to new opportunities
+    - generic [ref=e43]:
+      - heading "About" [level=2] [ref=e45]
+      - generic [ref=e46]:
+        - paragraph [ref=e47]: "Senior frontend developer focused on complex product interfaces: real-time chat, admin panels and design systems."
+        - paragraph [ref=e48]: I work on Chatflow and Chat-center at edna - contact-center products where a single screen has to stay fast and readable with thousands of live events behind it.
+        - paragraph [ref=e49]: Outside of work I maintain a few small zero-dependency npm packages and enjoy trimming code down to the part that actually carries the weight.
+    - generic [ref=e50]:
+      - heading "Connect" [level=2] [ref=e52]
+      - list [ref=e53]:
+        - listitem [ref=e54]:
+          - link "GitHub @eburlak" [ref=e55] [cursor=pointer]:
+            - /url: https://github.com/eburlak
+            - generic [ref=e56]: GitHub
+            - generic [ref=e61]: "@eburlak"
+        - listitem [ref=e62]:
+          - link "npm @eburlak" [ref=e63] [cursor=pointer]:
+            - /url: https://www.npmjs.com/~eburlak
+            - generic [ref=e64]: npm
+            - generic [ref=e69]: "@eburlak"
+        - listitem [ref=e70]:
+          - link "Telegram @eburlak" [ref=e71] [cursor=pointer]:
+            - /url: https://t.me/eburlak
+            - generic [ref=e72]: Telegram
+            - generic [ref=e77]: "@eburlak"
+        - listitem [ref=e78]:
+          - link "Email evgeniy.burlak@edna.io" [ref=e79] [cursor=pointer]:
+            - /url: mailto:evgeniy.burlak@edna.io
+            - generic [ref=e80]: Email
+            - generic [ref=e86]: evgeniy.burlak@edna.io
+    - generic [ref=e87]:
+      - heading "Stack" [level=2] [ref=e89]
+      - list [ref=e90]:
+        - listitem [ref=e91]:
+          - link "TypeScript" [ref=e92] [cursor=pointer]:
+            - /url: https://www.typescriptlang.org
+          - generic [aria-hidden]: TypeScript
+        - listitem [ref=e96]:
+          - link "JavaScript" [ref=e97] [cursor=pointer]:
+            - /url: https://developer.mozilla.org/docs/Web/JavaScript
+          - generic [aria-hidden]: JavaScript
+        - listitem [ref=e101]:
+          - link "React" [ref=e102] [cursor=pointer]:
+            - /url: https://react.dev
+          - generic [aria-hidden]: React
+        - listitem [ref=e106]:
+          - link "Redux" [ref=e107] [cursor=pointer]:
+            - /url: https://redux.js.org
+          - generic [aria-hidden]: Redux
+        - listitem [ref=e111]:
+          - link "Next.js" [ref=e112] [cursor=pointer]:
+            - /url: https://nextjs.org
+          - generic [aria-hidden]: Next.js
+        - listitem [ref=e116]:
+          - link "Node.js" [ref=e117] [cursor=pointer]:
+            - /url: https://nodejs.org
+          - generic [aria-hidden]: Node.js
+        - listitem [ref=e121]:
+          - link "Sass" [ref=e122] [cursor=pointer]:
+            - /url: https://sass-lang.com
+          - generic [aria-hidden]: Sass
+        - listitem [ref=e126]:
+          - link "styled-components" [ref=e127] [cursor=pointer]:
+            - /url: https://styled-components.com
+          - generic [aria-hidden]: styled-components
+        - listitem [ref=e131]:
+          - link "Vite" [ref=e132] [cursor=pointer]:
+            - /url: https://vite.dev
+          - generic [aria-hidden]: Vite
+        - listitem [ref=e136]:
+          - link "Webpack" [ref=e137] [cursor=pointer]:
+            - /url: https://webpack.js.org
+          - generic [aria-hidden]: Webpack
+        - listitem [ref=e141]:
+          - link "Jest" [ref=e142] [cursor=pointer]:
+            - /url: https://jestjs.io
+          - generic [aria-hidden]: Jest
+        - listitem [ref=e146]:
+          - link "Storybook" [ref=e147] [cursor=pointer]:
+            - /url: https://storybook.js.org
+          - generic [aria-hidden]: Storybook
+        - listitem [ref=e151]:
+          - link "Git" [ref=e152] [cursor=pointer]:
+            - /url: https://git-scm.com
+          - generic [aria-hidden]: Git
+        - listitem [ref=e156]:
+          - link "Docker" [ref=e157] [cursor=pointer]:
+            - /url: https://www.docker.com
+          - generic [aria-hidden]: Docker
+        - listitem [ref=e161]:
+          - link "Figma" [ref=e162] [cursor=pointer]:
+            - /url: https://figma.com
+          - generic [aria-hidden]: Figma
+    - generic [ref=e166]:
+      - heading "Experience" [level=2] [ref=e168]
+      - generic [ref=e169]:
+        - generic [ref=e170]:
+          - generic [ref=e171]:
+            - heading [level=3] [ref=e172]:
+              - link "edna" [ref=e173] [cursor=pointer]:
+                - /url: https://edna.ru
+            - generic [ref=e174]: Remote
+          - generic [ref=e176]:
+            - generic [ref=e177]:
+              - heading "Senior Frontend Developer" [level=4] [ref=e178]
+              - generic [ref=e179]: 2021 - Present
+            - list [ref=e180]:
+              - listitem [ref=e181]:
+                - text: "-"
+                - generic [ref=e182]: "Chat-center: agent workplace for contact-center operators - real-time threads, routing, supervisor dashboards."
+              - listitem [ref=e183]:
+                - text: "-"
+                - generic [ref=e184]: "Chatflow: visual bot-scenario editor built on a canvas of nodes and connections."
+              - listitem [ref=e185]:
+                - text: "-"
+                - generic [ref=e186]: Moved legacy classic-Redux modules onto Redux Toolkit slices and cut dead code along the way.
+            - list [ref=e187]:
+              - listitem [ref=e188]: React
+              - listitem [ref=e189]: TypeScript
+              - listitem [ref=e190]: Redux Toolkit
+              - listitem [ref=e191]: WebSocket
+              - listitem [ref=e192]: Jest
+        - generic [ref=e193]:
+          - generic [ref=e194]:
+            - heading "Previous company" [level=3] [ref=e195]
+            - generic [ref=e196]: Russia
+          - generic [ref=e198]:
+            - generic [ref=e199]:
+              - heading "Frontend Developer" [level=4] [ref=e200]
+              - generic [ref=e201]: 2018 - 2021
+            - list [ref=e202]:
+              - listitem [ref=e203]:
+                - text: "-"
+                - generic [ref=e204]: "TODO: fill in from the CV."
+            - list [ref=e205]:
+              - listitem [ref=e206]: JavaScript
+              - listitem [ref=e207]: React
+              - listitem [ref=e208]: Sass
+    - generic [ref=e209]:
+      - generic [ref=e210]:
+        - heading "Projects" [level=2] [ref=e211]
+        - generic [ref=e212]:
+          - generic [ref=e213]:
+            - generic [aria-hidden] [ref=e214]: "|"
+            - text: reading registry
+          - button "Reload package data from npm" [disabled] [ref=e215]
+      - generic [ref=e220]:
+        - article [ref=e221]:
+          - heading [level=3] [ref=e223]:
+            - link "notificit" [ref=e226] [cursor=pointer]:
+              - /url: https://www.npmjs.com/package/notificit
+          - paragraph [ref=e230]: "Zero-dependency toast notifications: stacking, click-outside and button close, configurable animation timing and class names."
+          - generic [ref=e231]:
+            - code [ref=e232]: npm i notificit
+            - generic [ref=e233]:
+              - generic [ref=e234]:
+                - term [ref=e235]: weekly
+                - definition [ref=e236]
+              - generic [ref=e239]:
+                - term [ref=e240]: updated
+                - definition [ref=e241]
+            - generic [ref=e244]:
+              - link "Demo" [ref=e245] [cursor=pointer]:
+                - /url: https://eburlak.github.io/notificit
+              - link "Source" [ref=e248] [cursor=pointer]:
+                - /url: https://github.com/eburlak/notificit
+        - article [ref=e251]:
+          - heading [level=3] [ref=e253]:
+            - link "maskit" [ref=e256] [cursor=pointer]:
+              - /url: https://www.npmjs.com/package/maskit
+          - paragraph [ref=e260]: Input mask driven by a pattern string - digits, letters, cyrillic and auto-filled separators, applied straight from a data attribute.
+          - generic [ref=e261]:
+            - code [ref=e262]: npm i maskit
+            - generic [ref=e263]:
+              - generic [ref=e264]:
+                - term [ref=e265]: weekly
+                - definition [ref=e266]
+              - generic [ref=e269]:
+                - term [ref=e270]: updated
+                - definition [ref=e271]
+            - generic [ref=e274]:
+              - link "Demo" [ref=e275] [cursor=pointer]:
+                - /url: https://eburlak.github.io/maskit
+              - link "Source" [ref=e278] [cursor=pointer]:
+                - /url: https://github.com/eburlak/maskit
+        - article [ref=e281]:
+          - heading [level=3] [ref=e283]:
+            - link "burlak" [ref=e286] [cursor=pointer]:
+              - /url: https://www.npmjs.com/package/burlak
+          - paragraph [ref=e290]: A small utility belt of helpers collected from day-to-day work, plus a graph module.
+          - generic [ref=e291]:
+            - code [ref=e292]: npm i burlak
+            - generic [ref=e293]:
+              - generic [ref=e294]:
+                - term [ref=e295]: weekly
+                - definition [ref=e296]
+              - generic [ref=e299]:
+                - term [ref=e300]: updated
+                - definition [ref=e301]
+            - generic [ref=e304]:
+              - link "Demo" [ref=e305] [cursor=pointer]:
+                - /url: https://eburlak.github.io/burlak
+              - link "Source" [ref=e308] [cursor=pointer]:
+                - /url: https://github.com/eburlak/burlak
+    - generic [ref=e311]:
+      - heading "Education" [level=2] [ref=e313]
+      - generic [ref=e315]:
+        - generic [ref=e316]:
+          - heading "University" [level=3] [ref=e317]
+          - paragraph [ref=e318]: "TODO: degree, faculty"
+        - generic [ref=e319]: 2010 - 2015
+  - contentinfo [ref=e320]:
+    - generic [ref=e322]:
+      - generic [ref=e323]:
+        - text: uptime
+        - generic [ref=e324]: "--:--.-"
+      - generic [ref=e325]:
+        - text: fps
+        - generic [ref=e326]: "--"
+      - generic [ref=e328]:
+        - text: viewport
+        - generic [ref=e329]: "--"
+    - generic [ref=e330]:
+      - paragraph [ref=e331]: Built with Next.js and styled-components. Hosted on GitHub Pages.
+      - paragraph [ref=e332]: © 2026 Evgeniy Burlak
+  - button "Open Next.js Dev Tools" [ref=e338] [cursor=pointer]

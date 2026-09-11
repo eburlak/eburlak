@@ -2,10 +2,11 @@
 
 import styled from "styled-components";
 
-import { dashedEdge } from "@/styles/mixins";
+import { dashedEdge, screenLineAfter } from "@/styles/mixins";
 import { layout } from "@/styles/theme";
 
 export const MainColumn = styled.main`
+  ${screenLineAfter}
   width: 100%;
   max-width: ${layout.contentWidth};
   flex: 1;

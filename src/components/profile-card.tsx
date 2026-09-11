@@ -9,12 +9,12 @@ import { Icon } from '@/components/Icon';
 import { ScrambleText } from '@/components/scramble-text';
 
 import { profile } from '@/data/profile';
-import { dashedEdge, screenLineBefore } from '@/styles/mixins';
+import { dashedEdge, screenLineAfter } from '@/styles/mixins';
 import { color, font, media } from '@/styles/theme';
 import Visibility from './Visibility';
 
 const Wrapper = styled.div`
-  ${screenLineBefore}
+  ${screenLineAfter}
   display: flex;
 `;
 

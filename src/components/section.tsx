@@ -3,16 +3,16 @@
 import type { ReactNode } from "react";
 import styled from "styled-components";
 
-import { screenLineAfter, screenLineBefore } from "@/styles/mixins";
+import { screenLineAfter } from "@/styles/mixins";
 import { color, font, layout } from "@/styles/theme";
 
 const Wrapper = styled.section`
+  ${screenLineAfter}
   counter-increment: section;
 `;
 
 /** Stays under the site header while its own section is being read. */
 const Header = styled.div`
-  ${screenLineBefore}
   ${screenLineAfter}
   position: sticky;
   top: ${layout.headerHeight};

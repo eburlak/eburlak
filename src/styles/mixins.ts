@@ -6,23 +6,9 @@ export const dashedEdge = `1px dashed ${color.edge}`;
 
 /**
  * Dashed rule anchored to the element edge but drawn across the whole viewport.
- * It sits on the element's own top edge, so a sticky element keeps it in view.
+ * It sits inside the element's own bottom edge: a sticky element keeps it in view, and
+ * the backdrop of whatever follows cannot paint over it.
  */
-export const screenLineBefore = css`
-  position: relative;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 100vw;
-    translate: -50% 0;
-    border-top: ${dashedEdge};
-    pointer-events: none;
-  }
-`;
-
 export const screenLineAfter = css`
   position: relative;
 
@@ -32,7 +18,7 @@ export const screenLineAfter = css`
     bottom: 0;
     left: 50%;
     width: 100vw;
-    translate: -50% 1px;
+    translate: -50% 0;
     border-bottom: ${dashedEdge};
     pointer-events: none;
   }
