@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 import LocationIcon from "@/assets/icons/location.svg";
 import VerifiedIcon from "@/assets/icons/verified.svg";
-import { Icon } from "@/components/icon";
+import { Icon } from "@/components/Icon";
 import { ScrambleText } from "@/components/scramble-text";
 
 import { profile } from "@/data/profile";
@@ -20,13 +20,13 @@ const Wrapper = styled.div`
 const AvatarFrame = styled.div`
   position: relative;
   flex-shrink: 0;
-  width: 8rem;
-  height: 8rem;
+  width: 128px;
+  height: 128px;
   border-right: ${dashedEdge};
 
   ${media.small} {
-    width: 10rem;
-    height: 10rem;
+    width: 160px;
+    height: 160px;
   }
 `;
 
@@ -35,33 +35,33 @@ const Details = styled.div`
   flex: 1;
   flex-direction: column;
   justify-content: center;
-  gap: 0.25rem;
-  padding: 0.75rem 1rem;
+  gap: 4px;
+  padding: 12px 16px;
 `;
 
 const Name = styled.h1`
   display: flex;
   align-items: center;
-  gap: 0.375rem;
+  gap: 6px;
   font-family: ${font.mono};
-  font-size: 1.25rem;
+  font-size: 20px;
   font-weight: 700;
   letter-spacing: -0.03em;
   line-height: 1.2;
 
   ${media.small} {
-    font-size: 1.5rem;
+    font-size: 24px;
   }
 
   svg {
-    width: 1rem;
-    height: 1rem;
+    width: 16px;
+    height: 16px;
     color: #3b82f6;
   }
 `;
 
 const JobTitle = styled.p`
-  font-size: 0.875rem;
+  font-size: 14px;
   color: ${color.mutedForeground};
 
   strong {
@@ -73,9 +73,9 @@ const JobTitle = styled.p`
 const Location = styled.a`
   display: flex;
   align-items: center;
-  gap: 0.25rem;
+  gap: 4px;
   width: fit-content;
-  font-size: 0.875rem;
+  font-size: 14px;
   color: ${color.mutedForeground};
   transition: color 150ms ease;
 
@@ -84,26 +84,26 @@ const Location = styled.a`
   }
 
   svg {
-    width: 0.875rem;
-    height: 0.875rem;
+    width: 14px;
+    height: 14px;
   }
 `;
 
 const Availability = styled.p`
   display: flex;
   align-items: center;
-  gap: 0.375rem;
-  margin-top: 0.25rem;
+  gap: 6px;
+  margin-top: 4px;
   font-family: ${font.mono};
-  font-size: 0.75rem;
+  font-size: 12px;
   color: ${color.mutedForeground};
 `;
 
 const OnlineDot = styled.span`
   position: relative;
   display: flex;
-  width: 0.375rem;
-  height: 0.375rem;
+  width: 6px;
+  height: 6px;
 
   &::before,
   &::after {

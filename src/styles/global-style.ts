@@ -52,7 +52,7 @@ export const GlobalStyle = createGlobalStyle`
     background-color: var(--background);
     color: var(--foreground);
     font-family: var(--font-sans), system-ui, sans-serif;
-    font-size: 1rem;
+    font-size: 16px;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
     -webkit-tap-highlight-color: transparent;
@@ -93,6 +93,11 @@ export const GlobalStyle = createGlobalStyle`
     color: var(--background);
   }
 
+  /* The transition overlay would otherwise swallow clicks for its whole duration. */
+  ::view-transition {
+    pointer-events: none;
+  }
+
   /* Theme swap: the incoming palette is wiped in from the toggle that started it. */
   [data-theme-switch="on"]::view-transition-old(root),
   [data-theme-switch="on"]::view-transition-new(root) {
@@ -104,12 +109,12 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   [data-theme-switch="on"]::view-transition-new(root) {
-    animation: theme-wipe 620ms ${easing.entrance} both;
+    animation: theme-wipe 600ms linear both;
   }
 
   @keyframes theme-wipe {
     from {
-      clip-path: circle(0 at var(--theme-switch-x) var(--theme-switch-y));
+      clip-path: circle(0% at var(--theme-switch-x) var(--theme-switch-y));
     }
     to {
       clip-path: circle(

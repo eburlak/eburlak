@@ -62,6 +62,6 @@ export const visuallyHidden = css`
 
 export const monoLabel = css`
   font-family: ${font.mono};
-  font-size: 0.75rem;
+  font-size: 12px;
   color: ${color.mutedForeground};
 `;

@@ -20,8 +20,8 @@ const Header = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
-  padding: 0.625rem 1rem;
+  gap: 16px;
+  padding: 10px 16px;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   background-color: color-mix(in srgb, var(--background) 82%, transparent);
@@ -30,9 +30,9 @@ const Header = styled.div`
 const Title = styled.h2`
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 8px;
   font-family: ${font.mono};
-  font-size: 0.75rem;
+  font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;

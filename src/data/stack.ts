@@ -13,7 +13,7 @@ import StyledComponentsIcon from "@/assets/icons/styledComponents.svg";
 import TypescriptIcon from "@/assets/icons/typescript.svg";
 import ViteIcon from "@/assets/icons/vite.svg";
 import WebpackIcon from "@/assets/icons/webpack.svg";
-import type { SvgIcon } from "@/components/icon";
+import type { SvgIcon } from "@/components/Icon";
 
 export type StackItem = {
   name: string;

@@ -5,21 +5,21 @@ import type { ReactNode } from "react";
 import styled from "styled-components";
 
 import ArrowLeftIcon from "@/assets/icons/arrowLeft.svg";
-import { Icon } from "@/components/icon";
+import { Icon } from "@/components/Icon";
 import { MainColumn } from "@/components/main-column";
 import { color, font } from "@/styles/theme";
 
 const Header = styled.div`
-  padding: 1.5rem 1rem;
+  padding: 24px 16px;
 `;
 
 const BackLink = styled(Link)`
   display: flex;
   align-items: center;
-  gap: 0.375rem;
+  gap: 6px;
   width: fit-content;
   font-family: ${font.mono};
-  font-size: 0.75rem;
+  font-size: 12px;
   color: ${color.mutedForeground};
   transition: color 150ms ease;
 
@@ -28,23 +28,23 @@ const BackLink = styled(Link)`
   }
 
   svg {
-    width: 0.875rem;
-    height: 0.875rem;
+    width: 14px;
+    height: 14px;
   }
 `;
 
 const Title = styled.h1`
-  margin-top: 0.75rem;
+  margin-top: 12px;
   font-family: ${font.mono};
-  font-size: 1.5rem;
+  font-size: 24px;
   font-weight: 700;
   letter-spacing: -0.03em;
   line-height: 1.2;
 `;
 
 const Description = styled.p`
-  margin-top: 0.375rem;
-  font-size: 0.875rem;
+  margin-top: 6px;
+  font-size: 14px;
   color: ${color.mutedForeground};
 `;
 

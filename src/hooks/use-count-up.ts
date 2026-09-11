@@ -13,7 +13,9 @@ export function useCountUp(target: number | null) {
   const startValueRef = useRef(0);
 
   useEffect(() => {
-    if (target === null) return;
+    if (target === null) {
+      return;
+    }
 
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const animationDuration = prefersReducedMotion ? 0 : DURATION_MS;
@@ -23,7 +25,9 @@ export function useCountUp(target: number | null) {
     let startedAt = 0;
 
     const render = (now: number) => {
-      if (startedAt === 0) startedAt = now;
+      if (startedAt === 0) {
+        startedAt = now;
+      }
 
       const progress =
         animationDuration === 0 ? 1 : Math.min((now - startedAt) / animationDuration, 1);
@@ -32,7 +36,11 @@ export function useCountUp(target: number | null) {
       setValue(current);
       startValueRef.current = current;
 
-      if (progress < 1) frameId = requestAnimationFrame(render);
+      if (progress < 1) {
+
+        frameId = requestAnimationFrame(render);
+
+      }
     };
 
     frameId = requestAnimationFrame(render);

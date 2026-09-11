@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from 'react';
 
 type InViewOptions = {
   /** Stop observing after the first intersection. */
@@ -9,23 +9,34 @@ type InViewOptions = {
 };
 
 export function useInView<T extends HTMLElement>({
-  once = true,
-  rootMargin = "0px 0px -8% 0px",
+  once = false,
+  rootMargin = '0px',
 }: InViewOptions = {}) {
   const ref = useRef<T | null>(null);
-  const [inView, setInView] = useState(false);
+  const [visible, setVisible] = useState(false);
+  const reportedRef = useRef(false);
 
   useEffect(() => {
     const element = ref.current;
-    if (!element) return;
+    if (!element) {
+      return;
+    }
 
     const observer = new IntersectionObserver(
       (entries) => {
         const isIntersecting = entries.some((entry) => entry.isIntersecting);
-        setInView(isIntersecting);
-        if (isIntersecting && once) observer.disconnect();
+
+        // The observer can report the same state twice; only a change is worth a render.
+        if (isIntersecting !== reportedRef.current) {
+          reportedRef.current = isIntersecting;
+          setVisible(isIntersecting);
+        }
+
+        if (isIntersecting && once) {
+          observer.disconnect();
+        }
       },
-      { rootMargin }
+      { rootMargin },
     );
 
     observer.observe(element);
@@ -33,5 +44,5 @@ export function useInView<T extends HTMLElement>({
     return () => observer.disconnect();
   }, [once, rootMargin]);
 
-  return { ref, inView } as const;
+  return { ref, visible } as const;
 }

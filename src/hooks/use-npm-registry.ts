@@ -41,7 +41,11 @@ async function fetchJson<T>(url: string, signal: AbortSignal, accept?: string) {
     headers: accept ? { Accept: accept } : undefined,
   });
 
-  if (!response.ok) throw new Error(`${url} responded with ${response.status}`);
+  if (!response.ok) {
+
+    throw new Error(`${url} responded with ${response.status}`);
+
+  }
 
   return (await response.json()) as T;
 }
@@ -91,7 +95,11 @@ export function useNpmRegistry(packageNames: string[]) {
         wait(MINIMUM_LOADING_MS),
       ]);
 
-      if (controller.signal.aborted) return;
+      if (controller.signal.aborted) {
+
+        return;
+
+      }
 
       setSnapshots(
         Object.fromEntries(requestedNames.map((packageName, index) => [packageName, results[index]]))

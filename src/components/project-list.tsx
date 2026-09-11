@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 import ArrowUpRightIcon from "@/assets/icons/arrowUpRight.svg";
 import NpmIcon from "@/assets/icons/npm.svg";
-import { Icon } from "@/components/icon";
+import { Icon } from "@/components/Icon";
 import { ScrambleText } from "@/components/scramble-text";
 import Skeleton from "@/components/skeleton";
 import { useCountUp } from "@/hooks/use-count-up";
@@ -28,27 +28,27 @@ const List = styled.div`
 `;
 
 const Project = styled.article`
-  padding: 1rem;
+  padding: 16px;
 `;
 
 const Header = styled.div`
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  gap: 0.75rem;
+  gap: 12px;
 `;
 
 const PackageName = styled.h3`
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 8px;
   font-family: ${font.mono};
   font-weight: 600;
   letter-spacing: -0.02em;
 
   svg {
-    width: 1rem;
-    height: 1rem;
+    width: 16px;
+    height: 16px;
     color: #cb3837;
   }
 
@@ -61,13 +61,13 @@ const PackageName = styled.h3`
 const Version = styled.span`
   flex-shrink: 0;
   font-family: ${font.mono};
-  font-size: 0.75rem;
+  font-size: 12px;
   color: ${color.mutedForeground};
 `;
 
 const Description = styled.p`
-  margin-top: 0.375rem;
-  font-size: 0.875rem;
+  margin-top: 6px;
+  font-size: 14px;
   color: ${color.mutedForeground};
 `;
 
@@ -75,30 +75,30 @@ const Footer = styled.div`
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.5rem 1rem;
-  margin-top: 0.75rem;
+  gap: 8px 16px;
+  margin-top: 12px;
 `;
 
 const InstallCommand = styled.code`
-  padding: 0.25rem 0.5rem;
-  border-radius: 0.375rem;
+  padding: 4px 8px;
+  border-radius: 6px;
   background-color: ${color.muted};
-  font-size: 0.75rem;
+  font-size: 12px;
 `;
 
 const Metrics = styled.dl`
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.5rem 1rem;
+  gap: 8px 16px;
   font-family: ${font.mono};
-  font-size: 0.75rem;
+  font-size: 12px;
   color: ${color.mutedForeground};
 
   div {
     display: flex;
     align-items: baseline;
-    gap: 0.375rem;
+    gap: 6px;
   }
 
   dd {
@@ -110,16 +110,16 @@ const Metrics = styled.dl`
 const Links = styled.div`
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 12px;
   margin-left: auto;
   font-family: ${font.mono};
-  font-size: 0.75rem;
+  font-size: 12px;
 `;
 
 const ExternalLink = styled.a`
   display: flex;
   align-items: center;
-  gap: 0.125rem;
+  gap: 2px;
   color: ${color.mutedForeground};
   transition: color ${duration.fast}ms ease;
 
@@ -128,20 +128,24 @@ const ExternalLink = styled.a`
   }
 
   svg {
-    width: 0.75rem;
-    height: 0.75rem;
+    width: 12px;
+    height: 12px;
     transition: translate ${duration.base}ms ${easing.spring};
   }
 
   &:hover svg {
-    translate: 0.125rem -0.125rem;
+    translate: 2px -2px;
   }
 `;
 
 function Downloads({ weeklyDownloads }: { weeklyDownloads: number | null }) {
   const counted = useCountUp(weeklyDownloads);
 
-  if (counted === null) return <>n/a</>;
+  if (counted === null) {
+
+    return <>n/a</>;
+
+  }
 
   return <>{numberFormat.format(counted)}</>;
 }

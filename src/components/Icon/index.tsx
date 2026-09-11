@@ -10,7 +10,7 @@ export type SvgIcon = ComponentType<ComponentProps<"svg">>;
 
 /** Base sizing for every icon; use as `<Icon as={ArrowLeftIcon} />`. */
 export const Icon = styled.svg<{ $rotate?: boolean }>`
-  width: 1rem;
+  width: 16px;
   max-width: 100%;
   height: auto;
   flex-shrink: 0;

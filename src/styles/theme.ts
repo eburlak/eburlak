@@ -16,11 +16,11 @@ export const font = {
 const headerHeightPx = 56;
 
 export const layout = {
-  contentWidth: "48rem",
+  contentWidth: "768px",
   headerHeightPx,
-  headerHeight: `${headerHeightPx / 16}rem`,
+  headerHeight: `${headerHeightPx}px`,
 } as const;
 
 export const media = {
-  small: "@media (min-width: 40rem)",
+  small: "@media (min-width: 640px)",
 } as const;

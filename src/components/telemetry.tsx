@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import { useEffect, useState, type CSSProperties } from "react";
-import styled from "styled-components";
+import { useEffect, useState, type CSSProperties } from 'react';
+import styled from 'styled-components';
 
-import { useInView } from "@/hooks/use-in-view";
-import { dashedEdge } from "@/styles/mixins";
-import { color, font } from "@/styles/theme";
+import { useInView } from '@/hooks/use-in-view';
+import { dashedEdge } from '@/styles/mixins';
+import { color, font } from '@/styles/theme';
 
 const SAMPLE_MS = 200;
 const HISTORY_LENGTH = 32;
@@ -16,18 +16,18 @@ const Wrapper = styled.div`
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem 1rem;
-  padding: 0.625rem 1rem;
+  gap: 8px 16px;
+  padding: 10px 16px;
   border-bottom: ${dashedEdge};
   font-family: ${font.mono};
-  font-size: 0.6875rem;
+  font-size: 11px;
   color: ${color.mutedForeground};
 `;
 
 const Field = styled.span`
   display: flex;
   align-items: baseline;
-  gap: 0.375rem;
+  gap: 6px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 `;
@@ -44,7 +44,7 @@ const Chart = styled.span`
   align-items: flex-end;
   align-self: center;
   gap: 1px;
-  height: 0.75rem;
+  height: 12px;
 `;
 
 const Bar = styled.span`
@@ -58,7 +58,7 @@ const Bar = styled.span`
 const emptyReadout = {
   uptimeMs: 0,
   fps: 0,
-  viewport: "",
+  viewport: '',
   history: Array.from<number>({ length: HISTORY_LENGTH }).fill(0),
 };
 
@@ -68,16 +68,20 @@ function formatUptime(uptimeMs: number) {
   const seconds = Math.floor(totalSeconds % 60);
   const tenths = Math.floor((uptimeMs % 1000) / 100);
 
-  return `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}.${tenths}`;
+  return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}.${tenths}`;
 }
 
 /** Live frame budget of the page it sits on - the footer's own instrument panel. */
 export function Telemetry() {
-  const { ref, inView } = useInView<HTMLDivElement>({ once: false, rootMargin: "0px" });
+  const { ref, visible } = useInView<HTMLDivElement>({
+    once: true,
+  });
   const [readout, setReadout] = useState(emptyReadout);
 
   useEffect(() => {
-    if (!inView) return;
+    if (!visible) {
+      return;
+    }
 
     let frameId = 0;
     let framesInSample = 0;
@@ -106,24 +110,29 @@ export function Telemetry() {
     frameId = requestAnimationFrame(render);
 
     return () => cancelAnimationFrame(frameId);
-  }, [inView]);
+  }, [visible]);
 
-  const isMeasuring = readout.viewport !== "";
+  const isMeasuring = readout.viewport !== '';
 
   return (
     <Wrapper ref={ref}>
       <Field>
-        uptime <Value>{isMeasuring ? formatUptime(readout.uptimeMs) : "--:--.-"}</Value>
+        uptime{' '}
+        <Value>
+          {isMeasuring ? formatUptime(readout.uptimeMs) : '--:--.-'}
+        </Value>
       </Field>
 
       <Field>
-        fps <Value>{isMeasuring ? readout.fps : "--"}</Value>
+        fps <Value>{isMeasuring ? readout.fps : '--'}</Value>
         <Chart aria-hidden="true">
           {readout.history.map((fps, index) => (
             <Bar
               key={index}
               style={
-                { "--bar-height": `${Math.min(fps / FPS_CEILING, 1) * 100}%` } as CSSProperties
+                {
+                  '--bar-height': `${Math.min(fps / FPS_CEILING, 1) * 100}%`,
+                } as CSSProperties
               }
             />
           ))}
@@ -131,7 +140,7 @@ export function Telemetry() {
       </Field>
 
       <Field>
-        viewport <Value>{isMeasuring ? readout.viewport : "--"}</Value>
+        viewport <Value>{isMeasuring ? readout.viewport : '--'}</Value>
       </Field>
     </Wrapper>
   );

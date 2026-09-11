@@ -17,7 +17,9 @@ function getScrambled(text: string, revealedCount: number) {
   return text
     .split("")
     .map((character, index) => {
-      if (index < revealedCount || character === " ") return character;
+      if (index < revealedCount || character === " ") {
+        return character;
+      }
       return glyphs[Math.floor(Math.random() * glyphs.length)];
     })
     .join("");
@@ -27,14 +29,18 @@ export function ScrambleText({ text }: { text: string }) {
   const [displayed, setDisplayed] = useState(text);
 
   useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      return;
+    }
 
     let frameId = 0;
     let startedAt = 0;
     let lastFrameAt = 0;
 
     const render = (now: number) => {
-      if (startedAt === 0) startedAt = now;
+      if (startedAt === 0) {
+        startedAt = now;
+      }
 
       const revealedCount = Math.floor((now - startedAt) / characterDelay);
 

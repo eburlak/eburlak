@@ -3,7 +3,7 @@
 import styled from "styled-components";
 
 import ArrowUpRightIcon from "@/assets/icons/arrowUpRight.svg";
-import { Icon } from "@/components/icon";
+import { Icon } from "@/components/Icon";
 import { socials } from "@/data/profile";
 import { dashedEdge } from "@/styles/mixins";
 import { duration, easing } from "@/styles/motion";
@@ -45,8 +45,8 @@ const Link = styled.a`
   display: flex;
   height: 100%;
   flex-direction: column;
-  gap: 0.25rem;
-  padding: 0.75rem 1rem;
+  gap: 4px;
+  padding: 12px 16px;
   transition: background-color ${duration.fast}ms ease;
 
   &:hover {
@@ -56,8 +56,8 @@ const Link = styled.a`
 
 /** Marks the cell as outbound and leans out of it under the cursor. */
 const Jump = styled(Icon)`
-  width: 0.75rem;
-  height: 0.75rem;
+  width: 12px;
+  height: 12px;
   margin-left: auto;
   color: ${color.mutedForeground};
   transition:
@@ -66,20 +66,20 @@ const Jump = styled(Icon)`
 
   ${Link}:hover & {
     color: ${color.foreground};
-    translate: 0.125rem -0.125rem;
+    translate: 2px -2px;
   }
 `;
 
 const Name = styled.span`
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 0.875rem;
+  gap: 8px;
+  font-size: 14px;
   font-weight: 500;
 
   svg:first-child {
-    width: 1rem;
-    height: 1rem;
+    width: 16px;
+    height: 16px;
   }
 `;
 
@@ -88,7 +88,7 @@ const Handle = styled.span`
   text-overflow: ellipsis;
   white-space: nowrap;
   font-family: ${font.mono};
-  font-size: 0.75rem;
+  font-size: 12px;
   color: ${color.mutedForeground};
 `;
 

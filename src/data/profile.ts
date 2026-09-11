@@ -2,7 +2,7 @@ import GithubIcon from "@/assets/icons/github.svg";
 import MailIcon from "@/assets/icons/mail.svg";
 import NpmIcon from "@/assets/icons/npm.svg";
 import TelegramIcon from "@/assets/icons/telegram.svg";
-import type { SvgIcon } from "@/components/icon";
+import type { SvgIcon } from "@/components/Icon";
 
 export const SITE_URL = "https://eburlak.github.io";
 

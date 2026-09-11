@@ -16,8 +16,8 @@ const Item = styled.div`
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  gap: 0.75rem;
-  padding: 1rem;
+  gap: 12px;
+  padding: 16px;
 `;
 
 const School = styled.h3`
@@ -27,14 +27,14 @@ const School = styled.h3`
 `;
 
 const Degree = styled.p`
-  font-size: 0.875rem;
+  font-size: 14px;
   color: ${color.mutedForeground};
 `;
 
 const Period = styled.span`
   flex-shrink: 0;
   font-family: ${font.mono};
-  font-size: 0.75rem;
+  font-size: 12px;
   color: ${color.mutedForeground};
 `;
 

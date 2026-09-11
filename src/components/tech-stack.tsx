@@ -3,7 +3,7 @@
 import type { CSSProperties } from "react";
 import styled from "styled-components";
 
-import { Icon } from "@/components/icon";
+import { Icon } from "@/components/Icon";
 import { stack } from "@/data/stack";
 import { visuallyHidden } from "@/styles/mixins";
 import { duration, easing } from "@/styles/motion";
@@ -12,8 +12,8 @@ import { color, font } from "@/styles/theme";
 const List = styled.ul`
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
-  padding: 1rem;
+  gap: 12px;
+  padding: 16px;
 `;
 
 const Item = styled.li`
@@ -22,16 +22,16 @@ const Item = styled.li`
 
 const Tooltip = styled.span`
   position: absolute;
-  bottom: calc(100% + 0.375rem);
+  bottom: calc(100% + 6px);
   left: 50%;
   z-index: 30;
-  translate: -50% 0.25rem;
-  padding: 0.125rem 0.375rem;
-  border-radius: 0.25rem;
+  translate: -50% 4px;
+  padding: 2px 6px;
+  border-radius: 4px;
   background-color: ${color.foreground};
   color: ${color.background};
   font-family: ${font.mono};
-  font-size: 0.625rem;
+  font-size: 10px;
   white-space: nowrap;
   opacity: 0;
   pointer-events: none;
@@ -45,9 +45,9 @@ const Link = styled.a`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 2rem;
-  height: 2rem;
-  border-radius: 0.375rem;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
   color: ${color.mutedForeground};
   transition:
     color ${duration.fast}ms ease,
@@ -59,7 +59,7 @@ const Link = styled.a`
     background-color: ${color.accent};
     color: var(--brand, ${color.foreground});
     scale: 1.12;
-    translate: 0 -0.125rem;
+    translate: 0 -2px;
   }
 
   &:active {
@@ -72,8 +72,8 @@ const Link = styled.a`
   }
 
   svg {
-    width: 1.25rem;
-    height: 1.25rem;
+    width: 20px;
+    height: 20px;
   }
 `;
 

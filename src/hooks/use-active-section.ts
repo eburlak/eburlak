@@ -18,7 +18,11 @@ export function useActiveSection(sectionIds: string[]) {
       .map((sectionId) => document.getElementById(sectionId))
       .filter((element): element is HTMLElement => element !== null);
 
-    if (elements.length === 0) return;
+    if (elements.length === 0) {
+
+      return;
+
+    }
 
     const ratios = new Map<string, number>();
 

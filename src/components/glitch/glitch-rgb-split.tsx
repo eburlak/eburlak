@@ -44,14 +44,14 @@ const drift = keyframes`
 const Stage = styled.div`
   position: relative;
   overflow: hidden;
-  padding: 0 0.5rem;
+  padding: 0 8px;
   animation: ${flicker} 6s infinite steps(1);
 `;
 
 const Code = styled.p`
   position: relative;
   font-family: ${font.mono};
-  font-size: clamp(5rem, 24vw, 11rem);
+  font-size: clamp(80px, 24vw, 176px);
   font-weight: 700;
   line-height: 1;
   letter-spacing: 0.06em;

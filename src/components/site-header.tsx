@@ -52,11 +52,11 @@ const Inner = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 16px;
   height: ${layout.headerHeight};
   max-width: ${layout.contentWidth};
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 16px;
   border-left: ${dashedEdge};
   border-right: ${dashedEdge};
 `;
@@ -64,9 +64,9 @@ const Inner = styled.div`
 const Brand = styled(Link)`
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 8px;
   font-family: ${font.mono};
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 600;
   letter-spacing: -0.02em;
 `;
@@ -75,25 +75,25 @@ const Monogram = styled.span`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 1.5rem;
-  height: 1.5rem;
-  border-radius: 0.375rem;
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
   background-color: ${color.foreground};
   color: ${color.background};
   font-family: ${font.mono};
-  font-size: 0.625rem;
+  font-size: 10px;
 `;
 
 const Actions = styled.div`
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 16px;
 `;
 
 const Nav = styled.nav`
   display: none;
   align-items: center;
-  gap: 1rem;
+  gap: 16px;
 
   ${media.small} {
     display: flex;
@@ -101,7 +101,7 @@ const Nav = styled.nav`
 `;
 
 const NavLink = styled(Link)`
-  font-size: 0.875rem;
+  font-size: 14px;
   color: ${color.mutedForeground};
   transition: color 150ms ease;
 

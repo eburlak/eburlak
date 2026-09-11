@@ -6,8 +6,8 @@ import { useSyncExternalStore } from "react";
 import styled from "styled-components";
 
 import ArrowLeftIcon from "@/assets/icons/arrowLeft.svg";
-import { GlitchSlices } from "@/components/glitch/glitch-slices";
-import { Icon } from "@/components/icon";
+import { GlitchSlices } from "@/components/Glitch/glitch-slices";
+import { Icon } from "@/components/Icon";
 import { ScrambleText } from "@/components/scramble-text";
 import { dashedEdge, screenLineAfter, screenLineBefore } from "@/styles/mixins";
 import { color, font } from "@/styles/theme";
@@ -20,14 +20,14 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1.5rem;
-  padding: 4rem 1rem;
+  gap: 24px;
+  padding: 64px 16px;
   text-align: center;
 `;
 
 const Status = styled.p`
   font-family: ${font.mono};
-  font-size: 0.75rem;
+  font-size: 12px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: ${color.mutedForeground};
@@ -37,13 +37,13 @@ const Status = styled.p`
 const Trace = styled.p`
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 8px;
   max-width: 100%;
-  padding: 0.375rem 0.625rem;
+  padding: 6px 10px;
   border: ${dashedEdge};
-  border-radius: 0.375rem;
+  border-radius: 6px;
   font-family: ${font.mono};
-  font-size: 0.75rem;
+  font-size: 12px;
   color: ${color.mutedForeground};
 
   code {
@@ -55,20 +55,20 @@ const Trace = styled.p`
 `;
 
 const Message = styled.p`
-  max-width: 32rem;
-  font-size: 0.875rem;
+  max-width: 512px;
+  font-size: 14px;
   color: ${color.mutedForeground};
 `;
 
 const HomeLink = styled(Link)`
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 0.875rem;
+  gap: 8px;
+  padding: 8px 14px;
   border: ${dashedEdge};
   border-radius: 9999px;
   font-family: ${font.mono};
-  font-size: 0.75rem;
+  font-size: 12px;
   transition:
     background-color 150ms ease,
     scale 260ms cubic-bezier(0.34, 1.42, 0.64, 1);
@@ -83,13 +83,13 @@ const HomeLink = styled(Link)`
   }
 
   svg {
-    width: 0.875rem;
-    height: 0.875rem;
+    width: 14px;
+    height: 14px;
     transition: translate 260ms cubic-bezier(0.34, 1.42, 0.64, 1);
   }
 
   &:hover svg {
-    translate: -0.25rem 0;
+    translate: -4px 0;
   }
 `;
 

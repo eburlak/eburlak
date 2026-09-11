@@ -3,7 +3,7 @@
 import styled from "styled-components";
 
 import ReloadIcon from "@/assets/icons/reload.svg";
-import { Icon } from "@/components/icon";
+import { Icon } from "@/components/Icon";
 import { ProjectList } from "@/components/project-list";
 import { Section } from "@/components/section";
 import { Spinner } from "@/components/spinner";
@@ -16,21 +16,21 @@ const packageNames = projects.map((project) => project.package);
 const Status = styled.div`
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 8px;
   font-family: ${font.mono};
-  font-size: 0.6875rem;
+  font-size: 11px;
   color: ${color.mutedForeground};
 `;
 
 const Source = styled.span`
   display: flex;
   align-items: center;
-  gap: 0.375rem;
+  gap: 6px;
 `;
 
 const Dot = styled.span<{ $live: boolean }>`
-  width: 0.375rem;
-  height: 0.375rem;
+  width: 6px;
+  height: 6px;
   border-radius: 9999px;
   background-color: ${({ $live }) => ($live ? color.online : "transparent")};
   box-shadow: inset 0 0 0 1px ${({ $live }) => ($live ? "transparent" : color.edge)};
@@ -41,9 +41,9 @@ const RefetchButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 1.25rem;
-  height: 1.25rem;
-  border-radius: 0.25rem;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
   cursor: pointer;
   color: ${color.mutedForeground};
   transition: color 150ms ease, background-color 150ms ease;
@@ -58,8 +58,8 @@ const RefetchButton = styled.button`
   }
 
   svg {
-    width: 0.75rem;
-    height: 0.75rem;
+    width: 12px;
+    height: 12px;
   }
 
   &:disabled svg {
