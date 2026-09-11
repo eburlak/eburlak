@@ -1,14 +1,16 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { useEffect, useState } from "react";
-import styled, { keyframes } from "styled-components";
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
+import styled, { keyframes } from 'styled-components';
 
-import { ThemeToggle } from "@/components/theme-toggle";
-import { useActiveSection } from "@/hooks/use-active-section";
-import { profile } from "@/data/profile";
-import { dashedEdge } from "@/styles/mixins";
-import { color, font, layout, media } from "@/styles/theme";
+import { ThemeToggle } from '@/components/theme-toggle';
+import { useActiveSection } from '@/hooks/use-active-section';
+import { profile } from '@/data/profile';
+import { dashedEdge } from '@/styles/mixins';
+import { color, font, layout, media } from '@/styles/theme';
+import { Icon } from './Icon';
+import BlobIcon from '@/assets/icons/blob.svg';
 
 const Wrapper = styled.header<{ $scrolled: boolean }>`
   position: sticky;
@@ -17,7 +19,9 @@ const Wrapper = styled.header<{ $scrolled: boolean }>`
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
   background-color: ${({ $scrolled }) =>
-    $scrolled ? "color-mix(in srgb, var(--background) 80%, transparent)" : "transparent"};
+    $scrolled
+      ? 'color-mix(in srgb, var(--background) 80%, transparent)'
+      : 'transparent'};
   transition: background-color 150ms ease;
 `;
 
@@ -71,19 +75,6 @@ const Brand = styled(Link)`
   letter-spacing: -0.02em;
 `;
 
-const Monogram = styled.span`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 24px;
-  height: 24px;
-  border-radius: 6px;
-  background-color: ${color.foreground};
-  color: ${color.background};
-  font-family: ${font.mono};
-  font-size: 10px;
-`;
-
 const Actions = styled.div`
   display: flex;
   align-items: center;
@@ -106,16 +97,16 @@ const NavLink = styled(Link)`
   transition: color 150ms ease;
 
   &:hover,
-  &[data-active="true"] {
+  &[data-active='true'] {
     color: ${color.foreground};
   }
 `;
 
 const navItems = [
-  { id: "about", href: "/#about", label: "About" },
-  { id: "stack", href: "/#stack", label: "Stack" },
-  { id: "experience", href: "/#experience", label: "Experience" },
-  { id: "projects", href: "/#projects", label: "Projects" },
+  { id: 'about', href: '/#about', label: 'About' },
+  { id: 'stack', href: '/#stack', label: 'Stack' },
+  { id: 'experience', href: '/#experience', label: 'Experience' },
+  { id: 'projects', href: '/#projects', label: 'Projects' },
 ];
 
 const navSectionIds = navItems.map((item) => item.id);
@@ -127,15 +118,17 @@ export function SiteHeader() {
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 16);
     handleScroll();
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
     <Wrapper $scrolled={scrolled}>
       <Inner>
         <Brand href="/#top">
-          <Monogram>{profile.initials}</Monogram>
+          <Icon as={BlobIcon} style={{
+            width: 32
+          }}/>
           <span>{profile.displayName}</span>
         </Brand>
 
@@ -146,7 +139,7 @@ export function SiteHeader() {
                 key={item.href}
                 href={item.href}
                 data-active={item.id === activeId}
-                aria-current={item.id === activeId ? "true" : undefined}
+                aria-current={item.id === activeId ? 'true' : undefined}
               >
                 {item.label}
               </NavLink>

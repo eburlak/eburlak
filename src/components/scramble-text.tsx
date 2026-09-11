@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import { useEffect, useState } from "react";
-import styled from "styled-components";
+import { useEffect, useState } from 'react';
+import styled from 'styled-components';
 
-import { visuallyHidden } from "@/styles/mixins";
+import { visuallyHidden } from '@/styles/mixins';
 
-const glyphs = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789<>/\\[]{}#$%&*+=-_";
+const glyphs = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789<>/\\[]{}#$%&*+=-_';
 const frameInterval = 40;
 const characterDelay = 55;
 
@@ -15,21 +15,25 @@ const RealText = styled.span`
 
 function getScrambled(text: string, revealedCount: number) {
   return text
-    .split("")
+    .split('')
     .map((character, index) => {
-      if (index < revealedCount || character === " ") {
+      if (index < revealedCount || character === ' ') {
         return character;
       }
       return glyphs[Math.floor(Math.random() * glyphs.length)];
     })
-    .join("");
+    .join('');
 }
 
-export function ScrambleText({ text }: { text: string }) {
+type TProps = {
+  text: string;
+};
+
+export function ScrambleText({ text }: TProps) {
   const [displayed, setDisplayed] = useState(text);
 
   useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       return;
     }
 

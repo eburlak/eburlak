@@ -1,16 +1,17 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import styled from "styled-components";
+import Image from 'next/image';
+import styled from 'styled-components';
 
-import LocationIcon from "@/assets/icons/location.svg";
-import VerifiedIcon from "@/assets/icons/verified.svg";
-import { Icon } from "@/components/Icon";
-import { ScrambleText } from "@/components/scramble-text";
+import LocationIcon from '@/assets/icons/location.svg';
+import VerifiedIcon from '@/assets/icons/verified.svg';
+import { Icon } from '@/components/Icon';
+import { ScrambleText } from '@/components/scramble-text';
 
-import { profile } from "@/data/profile";
-import { dashedEdge, screenLineBefore } from "@/styles/mixins";
-import { color, font, media } from "@/styles/theme";
+import { profile } from '@/data/profile';
+import { dashedEdge, screenLineBefore } from '@/styles/mixins';
+import { color, font, media } from '@/styles/theme';
+import Visibility from './Visibility';
 
 const Wrapper = styled.div`
   ${screenLineBefore}
@@ -107,7 +108,7 @@ const OnlineDot = styled.span`
 
   &::before,
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     inset: 0;
     border-radius: 9999px;
@@ -136,21 +137,29 @@ export function ProfileCard() {
           alt={profile.name}
           fill
           priority
-          style={{ objectFit: "cover" }}
+          style={{ objectFit: 'cover' }}
         />
       </AvatarFrame>
 
       <Details>
-        <Name>
-          <ScrambleText text={profile.name} />
-          <Icon as={VerifiedIcon} aria-label="verified" />
-        </Name>
+        <Visibility>
+          {({ ref, visible }) => (
+            <Name ref={ref as React.RefObject<HTMLHeadingElement>}>
+              {visible ? <ScrambleText text={profile.name} /> : profile.name}
+              <Icon as={VerifiedIcon} aria-label="verified" />
+            </Name>
+          )}
+        </Visibility>
 
         <JobTitle>
           {profile.jobTitle} at <strong>{profile.company}</strong>
         </JobTitle>
 
-        <Location href={profile.locationLink} target="_blank" rel="noreferrer noopener">
+        <Location
+          href={profile.locationLink}
+          target="_blank"
+          rel="noreferrer noopener"
+        >
           <Icon as={LocationIcon} />
           {profile.location}
         </Location>
