@@ -1,0 +1,40 @@
+[      64ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[      69ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[     237ms] [ERROR] Access to fetch at 'https://api.npmjs.org/downloads/point/last-week/notificit' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3000/:0
+[     237ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://api.npmjs.org/downloads/point/last-week/notificit:0
+[     237ms] [ERROR] Access to fetch at 'https://api.npmjs.org/downloads/point/last-week/burlak' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3000/:0
+[     237ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://api.npmjs.org/downloads/point/last-week/burlak:0
+[     241ms] [ERROR] Access to fetch at 'https://api.npmjs.org/downloads/point/last-week/maskit' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3000/:0
+[     242ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://api.npmjs.org/downloads/point/last-week/maskit:0
+[     934ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[     944ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[    1099ms] [ERROR] Access to fetch at 'https://api.npmjs.org/downloads/point/last-week/notificit' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3000/:0
+[    1099ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://api.npmjs.org/downloads/point/last-week/notificit:0
+[    1100ms] [ERROR] Access to fetch at 'https://api.npmjs.org/downloads/point/last-week/maskit' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3000/:0
+[    1100ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://api.npmjs.org/downloads/point/last-week/maskit:0
+[    1100ms] [ERROR] Access to fetch at 'https://api.npmjs.org/downloads/point/last-week/burlak' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3000/:0
+[    1100ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://api.npmjs.org/downloads/point/last-week/burlak:0
+[    1814ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[    1823ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[    1943ms] [ERROR] Access to fetch at 'https://api.npmjs.org/downloads/point/last-week/notificit' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3000/:0
+[    1943ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://api.npmjs.org/downloads/point/last-week/notificit:0
+[    1945ms] [ERROR] Access to fetch at 'https://api.npmjs.org/downloads/point/last-week/maskit' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3000/:0
+[    1945ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://api.npmjs.org/downloads/point/last-week/maskit:0
+[    1947ms] [ERROR] Access to fetch at 'https://api.npmjs.org/downloads/point/last-week/burlak' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3000/:0
+[    1947ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://api.npmjs.org/downloads/point/last-week/burlak:0
+[    2840ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[    2848ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[    2963ms] [ERROR] Access to fetch at 'https://api.npmjs.org/downloads/point/last-week/notificit' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3000/:0
+[    2963ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://api.npmjs.org/downloads/point/last-week/notificit:0
+[    2964ms] [ERROR] Access to fetch at 'https://api.npmjs.org/downloads/point/last-week/maskit' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3000/:0
+[    2964ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://api.npmjs.org/downloads/point/last-week/maskit:0
+[    2967ms] [ERROR] Access to fetch at 'https://api.npmjs.org/downloads/point/last-week/burlak' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3000/:0
+[    2967ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://api.npmjs.org/downloads/point/last-week/burlak:0
+[    3639ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[    3648ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js:776
+[    3776ms] [ERROR] Access to fetch at 'https://api.npmjs.org/downloads/point/last-week/maskit' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3000/:0
+[    3776ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://api.npmjs.org/downloads/point/last-week/maskit:0
+[    3778ms] [ERROR] Access to fetch at 'https://api.npmjs.org/downloads/point/last-week/notificit' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3000/:0
+[    3778ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://api.npmjs.org/downloads/point/last-week/notificit:0
+[    3779ms] [ERROR] Access to fetch at 'https://api.npmjs.org/downloads/point/last-week/burlak' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3000/:0
+[    3780ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://api.npmjs.org/downloads/point/last-week/burlak:0

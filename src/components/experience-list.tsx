@@ -2,6 +2,7 @@
 
 import styled from "styled-components";
 
+import { ScrambleText } from "@/components/scramble-text";
 import { experiences } from "@/data/experience";
 import { dashedEdge } from "@/styles/mixins";
 import { color, font } from "@/styles/theme";
@@ -126,10 +127,10 @@ export function ExperienceList() {
             <CompanyName>
               {experience.href ? (
                 <a href={experience.href} target="_blank" rel="noreferrer noopener">
-                  {experience.company}
+                  <ScrambleText text={experience.company} />
                 </a>
               ) : (
-                experience.company
+                <ScrambleText text={experience.company} />
               )}
             </CompanyName>
             {experience.location && <MonoText>{experience.location}</MonoText>}

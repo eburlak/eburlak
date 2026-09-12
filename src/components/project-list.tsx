@@ -161,7 +161,7 @@ function ProjectCard({ project, snapshot }: { project: Project; snapshot?: Packa
         <PackageName>
           <Icon as={NpmIcon} />
           <a href={project.npm} target="_blank" rel="noreferrer noopener">
-            {project.package}
+            <ScrambleText text={project.package} />
           </a>
         </PackageName>
 

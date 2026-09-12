@@ -11,7 +11,6 @@ import { ScrambleText } from '@/components/scramble-text';
 import { profile } from '@/data/profile';
 import { dashedEdge, screenLineAfter } from '@/styles/mixins';
 import { color, font, media } from '@/styles/theme';
-import Visibility from './Visibility';
 
 const Wrapper = styled.div`
   ${screenLineAfter}
@@ -142,14 +141,10 @@ export function ProfileCard() {
       </AvatarFrame>
 
       <Details>
-        <Visibility>
-          {({ ref, visible }) => (
-            <Name ref={ref as React.RefObject<HTMLHeadingElement>}>
-              {visible ? <ScrambleText text={profile.name} /> : profile.name}
-              <Icon as={VerifiedIcon} aria-label="verified" />
-            </Name>
-          )}
-        </Visibility>
+        <Name>
+          <ScrambleText text={profile.name} />
+          <Icon as={VerifiedIcon} aria-label="verified" />
+        </Name>
 
         <JobTitle>
           {profile.jobTitle} at <strong>{profile.company}</strong>

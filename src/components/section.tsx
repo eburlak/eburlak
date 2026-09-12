@@ -3,6 +3,7 @@
 import type { ReactNode } from "react";
 import styled from "styled-components";
 
+import { ScrambleText } from "@/components/scramble-text";
 import { screenLineAfter } from "@/styles/mixins";
 import { color, font, layout } from "@/styles/theme";
 
@@ -58,7 +59,9 @@ export function Section({
   return (
     <Wrapper id={id}>
       <Header>
-        <Title>{title}</Title>
+        <Title>
+          <ScrambleText text={title} />
+        </Title>
         {action}
       </Header>
 

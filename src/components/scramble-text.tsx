@@ -3,11 +3,13 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
+import { useInView } from '@/hooks/use-in-view';
 import { visuallyHidden } from '@/styles/mixins';
 
 const glyphs = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789<>/\\[]{}#$%&*+=-_';
 const frameInterval = 40;
 const characterDelay = 55;
+const bottomEdgeIgnored = '0px 0px -100px 0px';
 
 const RealText = styled.span`
   ${visuallyHidden}
@@ -30,10 +32,12 @@ type TProps = {
 };
 
 export function ScrambleText({ text }: TProps) {
+  const { ref, visible } = useInView<HTMLSpanElement>({ rootMargin: bottomEdgeIgnored });
   const [displayed, setDisplayed] = useState(text);
 
   useEffect(() => {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    if (!visible || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      setDisplayed(text);
       return;
     }
 
@@ -64,12 +68,12 @@ export function ScrambleText({ text }: TProps) {
     frameId = requestAnimationFrame(render);
 
     return () => cancelAnimationFrame(frameId);
-  }, [text]);
+  }, [text, visible]);
 
   return (
-    <>
+    <span ref={ref}>
       <RealText>{text}</RealText>
       <span aria-hidden="true">{displayed}</span>
-    </>
+    </span>
   );
 }

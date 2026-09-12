@@ -2,6 +2,7 @@
 
 import styled from "styled-components";
 
+import { ScrambleText } from "@/components/scramble-text";
 import { education } from "@/data/experience";
 import { dashedEdge } from "@/styles/mixins";
 import { color, font } from "@/styles/theme";
@@ -44,7 +45,9 @@ export function EducationList() {
       {education.map((item) => (
         <Item key={item.school}>
           <div>
-            <School>{item.school}</School>
+            <School>
+              <ScrambleText text={item.school} />
+            </School>
             <Degree>{item.degree}</Degree>
           </div>
           <Period>

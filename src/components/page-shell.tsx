@@ -1,14 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import type { ReactNode, RefObject } from "react";
+import type { ReactNode } from "react";
 import styled from "styled-components";
 
 import ArrowLeftIcon from "@/assets/icons/arrowLeft.svg";
 import { Icon } from "@/components/Icon";
 import { MainColumn } from "@/components/main-column";
 import { ScrambleText } from "@/components/scramble-text";
-import Visibility from "@/components/Visibility";
 import { screenLineAfter } from "@/styles/mixins";
 import { duration, easing } from "@/styles/motion";
 import { color, font } from "@/styles/theme";
@@ -75,13 +74,9 @@ export function PageShell({
           Back to home
         </BackLink>
 
-        <Visibility>
-          {({ ref, visible }) => (
-            <Title ref={ref as RefObject<HTMLHeadingElement>}>
-              {visible ? <ScrambleText text={title} /> : title}
-            </Title>
-          )}
-        </Visibility>
+        <Title>
+          <ScrambleText text={title} />
+        </Title>
         {description && <Description>{description}</Description>}
       </Header>
 
