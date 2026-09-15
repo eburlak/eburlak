@@ -1,66 +1,82 @@
 export type ExperiencePosition = {
-  title: string;
+  key: string;
   start: string;
   end?: string;
-  description?: string[];
   skills?: string[];
 };
 
 export type Experience = {
+  key: string;
   company: string;
-  logo?: string;
   href?: string;
   location?: string;
   positions: ExperiencePosition[];
 };
 
-// TODO: replace with the real work history from the CV.
 export const experiences: Experience[] = [
   {
-    company: "edna",
-    href: "https://edna.ru",
-    location: "Remote",
+    key: 'edna',
+    company: 'edna',
+    href: 'https://edna.ru',
+    location: 'remote',
     positions: [
       {
-        title: "Senior Frontend Developer",
-        start: "2021",
-        description: [
-          "Chat-center: agent workplace for contact-center operators - real-time threads, routing, supervisor dashboards.",
-          "Chatflow: visual bot-scenario editor built on a canvas of nodes and connections.",
-          "Moved legacy classic-Redux modules onto Redux Toolkit slices and cut dead code along the way.",
+        key: 'edna',
+        start: '2022',
+        skills: [
+          'TypeScript',
+          'React',
+          'Redux Toolkit',
+          'styled-components',
+          'Jest',
+          'Node.js',
         ],
-        skills: ["React", "TypeScript", "Redux Toolkit", "WebSocket", "Jest"],
       },
     ],
   },
   {
-    company: "Previous company",
-    location: "Russia",
+    key: 'sobix',
+    company: 'Sobix',
     positions: [
       {
-        title: "Frontend Developer",
-        start: "2018",
-        end: "2021",
-        description: ["TODO: fill in from the CV."],
-        skills: ["JavaScript", "React", "Sass"],
+        key: 'sobix',
+        start: '2018',
+        end: '2022',
+        skills: [
+          'JavaScript',
+          'React',
+          'Sass',
+          'Electron',
+          'Cordova',
+          'Docker',
+        ],
+      },
+    ],
+  },
+  {
+    key: 'bestartdesign',
+    company: 'BestArtDesign',
+    positions: [
+      {
+        key: 'bestartdesign',
+        start: '2014',
+        end: '2018',
+        skills: ['JavaScript', 'Vue', 'jQuery', 'Less', 'PHP', 'MySQL'],
       },
     ],
   },
 ];
 
 export type Education = {
-  school: string;
-  degree: string;
+  key: string;
   start: string;
   end: string;
 };
 
-// TODO: replace with real education data.
 export const education: Education[] = [
   {
-    school: "University",
-    degree: "TODO: degree, faculty",
-    start: "2010",
-    end: "2015",
+    key: 'sevgu',
+    start: '2010',
+    end: '2015',
   },
 ];

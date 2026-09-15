@@ -1,24 +1,13 @@
 'use client';
 
-import { useInView } from '@/hooks/use-in-view';
-import React from 'react';
+import { useInView } from '@/hooks';
 
-type TProps = {
-  children: (props: {
-    visible?: boolean;
-    ref: React.RefObject<HTMLElement | null>;
-  }) => React.ReactElement;
-};
+import type { TProps } from './types';
 
-const Visibility = React.memo<TProps>(({ children }) => {
+const Visibility = ({ children }: TProps) => {
   const { ref, visible } = useInView();
 
-  return children({
-    ref,
-    visible,
-  });
-});
-
-Visibility.displayName = 'Visibility';
+  return children({ ref, visible });
+};
 
 export default Visibility;

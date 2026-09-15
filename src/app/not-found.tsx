@@ -1,16 +1,19 @@
-import type { Metadata } from "next";
+import type { Metadata } from 'next';
+import { getTranslations } from 'next-intl/server';
 
-import { MainColumn } from "@/components/main-column";
-import { NotFoundScreen } from "@/components/not-found-screen";
+import Container from '@/components/Container';
+import NotFound from '@/containers/NotFound';
 
-export const metadata: Metadata = {
-  title: "404 - Page not found",
+export const generateMetadata = async (): Promise<Metadata> => {
+  const t = await getTranslations('notFound');
+
+  return { title: `404 - ${t('status')}` };
 };
 
-export default function NotFound() {
+export default function NotFoundPage() {
   return (
-    <MainColumn>
-      <NotFoundScreen />
-    </MainColumn>
+    <Container>
+      <NotFound />
+    </Container>
   );
 }

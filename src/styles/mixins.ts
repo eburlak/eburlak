@@ -1,8 +1,8 @@
-import { css } from "styled-components";
+import { css } from 'styled-components';
 
-import { color, font } from "./theme";
+import { font } from './theme';
 
-export const dashedEdge = `1px dashed ${color.edge}`;
+export const dashedEdge = css`1px dashed ${({ theme }) => theme.colors.edge}`;
 
 /**
  * Dashed rule anchored to the element edge but drawn across the whole viewport.
@@ -13,7 +13,7 @@ export const screenLineAfter = css`
   position: relative;
 
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -27,8 +27,8 @@ export const screenLineAfter = css`
 export const stripes = css`
   background-image: repeating-linear-gradient(
     -45deg,
-    ${color.edge} 0,
-    ${color.edge} 1px,
+    ${({ theme }) => theme.colors.edge} 0,
+    ${({ theme }) => theme.colors.edge} 1px,
     transparent 1px,
     transparent 6px
   );
@@ -49,5 +49,5 @@ export const visuallyHidden = css`
 export const monoLabel = css`
   font-family: ${font.mono};
   font-size: 12px;
-  color: ${color.mutedForeground};
+  color: ${({ theme }) => theme.colors.mutedForeground};
 `;
