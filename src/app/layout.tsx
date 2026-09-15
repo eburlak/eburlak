@@ -4,6 +4,7 @@ import { getLocale, getTranslations } from 'next-intl/server';
 import { cookies } from 'next/headers';
 import React from 'react';
 
+import { Modals } from '@/components/Modal';
 import Footer from '@/containers/Footer';
 import Header from '@/containers/Header';
 import { profile, SITE_URL } from '@/data/profile';
@@ -64,6 +65,7 @@ const Layout = async ({ children }: React.PropsWithChildren) => {
                   <Globals />
                   <NextIntlClientProvider>
                     <Header />
+                    <Modals />
                     {children}
                     <Footer />
                   </NextIntlClientProvider>
