@@ -20,8 +20,8 @@ const en = {
     verified: 'verified',
     about: [
       'Frontend developer with 11+ years of experience. The last 4.5 of them on product work at edna, a SaaS company in digital communications.',
-      'Sole frontend developer on Chatflow: built the entire frontend from scratch. On chat-center I run a continuous migration of an eight-year-old codebase - around 80% done - and built the mobile version single-handedly.',
-      'I maintain the shared component library used by 8+ frontend developers across the company, and do code reviews, technical interviews and mentoring.',
+      'Sole frontend developer on Chatflow: built the entire frontend from scratch. On chat-center I rewrite the legacy code of an eight-year-old codebase - class components to function components, SCSS to styled-components, around 80% done. The mobile version I built single-handedly, from scratch.',
+      'I contribute to the shared component library used by 8+ frontend developers across the company, and do code reviews, technical interviews and mentoring.',
       'A separate specialty is data visualisation: four years on exchange charts and technical-analysis tooling, and my own TypeScript charting library maintained since 2018.',
     ],
   },
@@ -45,14 +45,14 @@ const en = {
         'chat-center: moved around 80% of an eight-year-old codebase from class to function components and from SCSS to styled-components, without pausing product work.',
         'Built the mobile version of the interface from scratch on my own and took part in the full interface redesign.',
         'Helped introduce testing: the project had none, now every new piece of code is covered with Jest and @testing-library/react.',
-        'I maintain the internal component library used by 8+ frontend developers, ran around 10 technical interviews and mentored a colleague from junior to middle.',
+        'I contribute to the internal component library used by 8+ frontend developers, ran around 10 technical interviews and mentored a colleague from junior to middle.',
       ],
     },
     sobix: {
       title: 'Frontend Developer',
       points: [
         'Interfaces for a forex exchange and a crypto wallet.',
-        'In-house exchange charting package: candlestick charts, technical-analysis tools, indicators and Fibonacci grids.',
+        'In-house exchange charting package: candlestick charts, technical-analysis tools and indicators.',
         'Desktop builds on Electron for macOS, Windows and Linux, and an Android build on Cordova.',
       ],
     },
@@ -81,7 +81,7 @@ const en = {
     source: 'Source',
     empty: 'n/a',
     burlak:
-      'My main personal project, maintained since 2018. A TypeScript charting library written from scratch, with no graphics libraries among its dependencies. Chart types: combined, radar, funnel, pie, donut and slice, all on a shared rendering core with one settings system. The package also ships a set of utilities: HTTP requests, dates, cookies, an event emitter, and DOM and URL helpers.',
+      'My main personal project, maintained since 2018. A TypeScript charting library written from scratch, with no graphics libraries among its dependencies. Chart types: combined, radar, funnel, pie and donut, all on a shared rendering core with one settings system. The package also ships a set of utilities: HTTP requests, dates, cookies, an event emitter, and DOM and URL helpers.',
     maskit:
       'Input masks: declarative mask syntax, wiring through data attributes, lifecycle callbacks and cyrillic support.',
     notificit:

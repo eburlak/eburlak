@@ -21,6 +21,7 @@ const Socials = () => {
               href={social.href}
               target="_blank"
               rel="noreferrer noopener"
+              title={social.handle}
             >
               <S.Name>
                 <Icon as={social.icon} />
