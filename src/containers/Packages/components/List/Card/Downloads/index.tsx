@@ -10,7 +10,7 @@ type TProps = {
 };
 
 const Downloads = ({ weeklyDownloads }: TProps) => {
-  const t = useTranslations('projects');
+  const t = useTranslations('packages');
   const counted = useCountUp(weeklyDownloads);
 
   if (counted === null) {

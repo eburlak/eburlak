@@ -73,7 +73,7 @@ const getSnapshot = async (packageName: string): Promise<TSnapshot> => {
 export const getSnapshots = createAsyncThunk<
   Record<string, TSnapshot>,
   string[]
->('projects/getSnapshots', async (packageNames) => {
+>('packages/getSnapshots', async (packageNames) => {
   const [results] = await Promise.all([
     Promise.all(
       packageNames.map((packageName) =>
@@ -92,8 +92,8 @@ const initialState: TState = {
   snapshots: {},
 };
 
-export const projectsSlice = createSlice({
-  name: 'projects',
+export const packagesSlice = createSlice({
+  name: 'packages',
   initialState,
   reducers: {},
   extraReducers: (builder) => {
@@ -116,4 +116,4 @@ export const projectsSlice = createSlice({
   },
 });
 
-export default projectsSlice.reducer;
+export default packagesSlice.reducer;

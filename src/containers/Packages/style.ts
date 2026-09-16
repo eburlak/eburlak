@@ -2,6 +2,10 @@ import styled from 'styled-components';
 
 import { font } from '@/styles/theme';
 
+export const Note = styled.p`
+  margin-bottom: 16px;
+`;
+
 export const Status = styled.div`
   display: flex;
   align-items: center;

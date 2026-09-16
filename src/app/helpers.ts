@@ -1,6 +1,6 @@
 import { getLocale, getTranslations } from 'next-intl/server';
 
-import { education } from '@/data/experience';
+import { education, getExperienceYears } from '@/data/experience';
 import { profile, socials, SITE_URL } from '@/data/profile';
 import { stack } from '@/data/stack';
 import { getMessages, getOtherLocales } from '@/i18n/messages';
@@ -32,7 +32,7 @@ export const getProfileJsonLd = async () => {
       givenName: t('firstName'),
       familyName: t('lastName'),
       jobTitle: profile.jobTitle,
-      description: t.raw('about')[0],
+      description: t('about.0', { years: getExperienceYears() }),
       url: SITE_URL,
       image: new URL(profile.avatar, SITE_URL).toString(),
       email: `mailto:${profile.email}`,

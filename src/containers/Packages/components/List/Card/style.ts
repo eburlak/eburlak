@@ -44,6 +44,7 @@ export const Version = styled.span`
 export const Description = styled.p`
   margin-top: 6px;
   font-size: 14px;
+  white-space: pre-line;
   color: ${({ theme }) => theme.colors.mutedForeground};
 `;
 

@@ -8,6 +8,7 @@ import Metrica from '@/components/Metrica';
 import { Modals } from '@/components/Modal';
 import Footer from '@/containers/Footer';
 import Header from '@/containers/Header';
+import { getExperienceYears } from '@/data/experience';
 import { profile, SITE_URL } from '@/data/profile';
 import Notification from '@/providers/Notification';
 import Theme from '@/providers/Theme';
@@ -26,7 +27,7 @@ export const generateMetadata = async (): Promise<Metadata> => {
 
   const name = t('name');
   const title = `${name} - ${profile.jobTitle}`;
-  const description = t.raw('about')[0];
+  const description = t('about.0', { years: getExperienceYears() });
 
   return {
     metadataBase: new URL(SITE_URL),

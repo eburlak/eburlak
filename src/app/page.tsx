@@ -5,7 +5,7 @@ import About from '@/containers/About';
 import Education from '@/containers/Education';
 import Experience from '@/containers/Experience';
 import Profile from '@/containers/Profile';
-import Projects from '@/containers/Projects';
+import Packages from '@/containers/Packages';
 import Socials from '@/containers/Socials';
 import Stack from '@/containers/Stack';
 
@@ -31,7 +31,7 @@ export default async function Home() {
       <Socials />
       <Stack />
       <Experience />
-      <Projects />
+      <Packages />
       <Education />
     </Container>
   );

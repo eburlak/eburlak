@@ -14,14 +14,14 @@ import type { TProps } from './types';
 
 import * as S from './style';
 
-const Card = ({ project }: TProps) => {
-  const t = useTranslations('projects');
+const Card = ({ item }: TProps) => {
+  const t = useTranslations('packages');
   const snapshot = useAppSelector(
-    (state) => state.projects.snapshots[project.package],
+    (state) => state.packages.snapshots[item.name],
   );
 
   const isLoading = (snapshot?.status ?? 'loading') === 'loading';
-  const version = snapshot?.version ?? project.version;
+  const version = snapshot?.version ?? item.version;
   const updatedAt = snapshot?.updatedAt;
 
   return (
@@ -29,8 +29,8 @@ const Card = ({ project }: TProps) => {
       <S.Header>
         <S.Name>
           <Icon as={NpmIcon} />
-          <a href={project.npm} target="_blank" rel="noreferrer noopener">
-            <ScrambleText text={project.package} />
+          <a href={item.npm} target="_blank" rel="noreferrer noopener">
+            <ScrambleText text={item.name} />
           </a>
         </S.Name>
 
@@ -43,10 +43,10 @@ const Card = ({ project }: TProps) => {
         </S.Version>
       </S.Header>
 
-      <S.Description>{t(project.package)}</S.Description>
+      <S.Description>{t(item.name)}</S.Description>
 
       <S.Footer>
-        <S.InstallCommand>npm i {project.package}</S.InstallCommand>
+        <S.InstallCommand>npm i {item.name}</S.InstallCommand>
 
         <S.Metrics>
           <div>
@@ -74,9 +74,9 @@ const Card = ({ project }: TProps) => {
         </S.Metrics>
 
         <S.Links>
-          {project.demo && (
+          {item.demo && (
             <S.Link
-              href={project.demo}
+              href={item.demo}
               target="_blank"
               rel="noreferrer noopener"
             >
@@ -84,7 +84,7 @@ const Card = ({ project }: TProps) => {
               <Icon as={ArrowUpRightIcon} />
             </S.Link>
           )}
-          <S.Link href={project.repo} target="_blank" rel="noreferrer noopener">
+          <S.Link href={item.repo} target="_blank" rel="noreferrer noopener">
             {t('source')}
             <Icon as={ArrowUpRightIcon} />
           </S.Link>

@@ -1,10 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
-import projects from './slices/projects';
+import packages from './slices/packages';
 import ui from './slices/ui';
 
 const store = configureStore({
   reducer: {
-    projects,
+    packages,
     ui,
   },
 });

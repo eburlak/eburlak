@@ -6,14 +6,14 @@ const en = {
     about: 'About',
     stack: 'Stack',
     experience: 'Experience',
-    projects: 'Projects',
+    packages: 'Packages',
   },
   section: {
     about: 'About',
     connect: 'Connect',
     stack: 'Stack',
     experience: 'Experience',
-    projects: 'Projects',
+    packages: 'Packages',
     education: 'Education',
   },
   profile: {
@@ -24,7 +24,7 @@ const en = {
     availability: 'Open to new opportunities',
     verified: 'verified',
     about: [
-      'Frontend developer with 11+ years of experience. The last 4.5 of them on product work at edna, a SaaS company in digital communications.',
+      'Frontend developer with {years, plural, one {# year} other {# years}} of experience. The last 4.5 of them on product work at edna, a SaaS company in digital communications.',
       'Sole frontend developer on Chatflow: built the entire frontend from scratch. On chat-center I rewrite the legacy code of an eight-year-old codebase - class components to function components, SCSS to styled-components, around 80% done. The mobile version I built single-handedly, from scratch.',
       'I contribute to the shared component library used by 8+ frontend developers across the company, and do code reviews, technical interviews and mentoring.',
       'A separate specialty is data visualisation: four years on exchange charts and technical-analysis tooling, and my own TypeScript charting library maintained since 2018.',
@@ -75,7 +75,8 @@ const en = {
       degree: "Bachelor's, Information Systems and Technologies",
     },
   },
-  projects: {
+  packages: {
+    note: 'Every package is built from TypeScript to native JavaScript, with no dependencies and no framework attached.',
     reading: 'reading registry',
     live: 'npm live',
     cached: 'cached',
@@ -86,11 +87,11 @@ const en = {
     source: 'Source',
     empty: 'n/a',
     burlak:
-      'My main personal project, maintained since 2018. A TypeScript charting library written from scratch, with no graphics libraries among its dependencies. Chart types: combined, radar, funnel, pie and donut, all on a shared rendering core with one settings system. The package also ships a set of utilities: HTTP requests, dates, cookies, an event emitter, and DOM and URL helpers.',
+      'My main personal project, maintained since 2018. A TypeScript charting library written from scratch, with no graphics libraries among its dependencies.\nChart types: combined, radar, funnel, pie and donut - on a shared rendering core with one settings system.\nUtilities in the package: HTTP requests, dates, cookies, an event emitter, DOM and URL helpers.',
     maskit:
       'Input masks: declarative mask syntax, wiring through data attributes, lifecycle callbacks and cyrillic support.',
     notificit:
-      'Toast notifications: configurable animations, close modes and class-name customisation.',
+      'Notifications: configurable animations, close modes, a global loading indicator and class-name customisation.',
   },
   notFound: {
     status: 'Page not found',

@@ -13,7 +13,7 @@ const navItems = [
   { id: 'about', href: '/#about', label: 'about' },
   { id: 'stack', href: '/#stack', label: 'stack' },
   { id: 'experience', href: '/#experience', label: 'experience' },
-  { id: 'projects', href: '/#projects', label: 'projects' },
+  { id: 'packages', href: '/#packages', label: 'packages' },
 ];
 
 const navSectionIds = navItems.map((item) => item.id);

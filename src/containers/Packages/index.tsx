@@ -7,20 +7,21 @@ import ReloadIcon from '@/assets/icons/reload.svg';
 import Icon from '@/components/Icon';
 import Section from '@/components/Section';
 import Spinner from '@/components/Spinner';
-import { projects } from '@/data/projects';
+import { packages } from '@/data/packages';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
-import { getSnapshots } from '@/store/slices/projects';
+import { getSnapshots } from '@/store/slices/packages';
 
 import List from './components/List';
 
 import * as S from './style';
 
-const packageNames = projects.map((project) => project.package);
+const packageNames = packages.map((item) => item.name);
 
-const Projects = () => {
-  const t = useTranslations('projects');
+const Packages = () => {
+  const t = useTranslations('section');
+  const tPackages = useTranslations('packages');
   const dispatch = useAppDispatch();
-  const snapshots = useAppSelector((state) => state.projects.snapshots);
+  const snapshots = useAppSelector((state) => state.packages.snapshots);
 
   const refetch = React.useCallback(() => {
     dispatch(getSnapshots(packageNames));
@@ -41,19 +42,19 @@ const Projects = () => {
 
   return (
     <Section
-      id="projects"
-      title="Projects"
+      id="packages"
+      title={t('packages')}
       action={
         <S.Status aria-live="polite">
           {isLoading ? (
             <S.Source>
               <Spinner />
-              {t('reading')}
+              {tPackages('reading')}
             </S.Source>
           ) : (
             <S.Source>
               <S.Dot $live={isLive} aria-hidden="true" />
-              {isLive ? t('live') : t('cached')}
+              {isLive ? tPackages('live') : tPackages('cached')}
             </S.Source>
           )}
 
@@ -61,16 +62,17 @@ const Projects = () => {
             type="button"
             onClick={refetch}
             disabled={isLoading}
-            aria-label={t('reload')}
+            aria-label={tPackages('reload')}
           >
             <Icon as={ReloadIcon} />
           </S.RefetchButton>
         </S.Status>
       }
     >
+      <S.Note>{tPackages('note')}</S.Note>
       <List />
     </Section>
   );
 };
 
-export default Projects;
+export default Packages;

@@ -1,3 +1,5 @@
+import { getYearsSince } from '@/utils/date';
+
 export type ExperiencePosition = {
   key: string;
   start: string;
@@ -66,6 +68,15 @@ export const experiences: Experience[] = [
     ],
   },
 ];
+
+const getCareerStart = () => {
+  const [firstCompany] = experiences.slice(-1);
+  const [firstPosition] = firstCompany.positions.slice(-1);
+
+  return firstPosition.start;
+};
+
+export const getExperienceYears = () => getYearsSince(getCareerStart());
 
 export type Education = {
   key: string;

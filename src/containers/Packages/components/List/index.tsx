@@ -1,6 +1,6 @@
 'use client';
 
-import { projects } from '@/data/projects';
+import { packages } from '@/data/packages';
 
 import Card from './Card';
 
@@ -8,8 +8,8 @@ import * as S from './style';
 
 const List = () => (
   <S.Wrapper>
-    {projects.map((project) => (
-      <Card key={project.package} project={project} />
+    {packages.map((item) => (
+      <Card key={item.name} item={item} />
     ))}
   </S.Wrapper>
 );

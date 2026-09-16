@@ -19,3 +19,6 @@ export const formatted = ({
 
   return format(date, dateFromat);
 };
+
+export const getYearsSince = (year: string) =>
+  Math.max(new Date().getFullYear() - Number(year), 1);
