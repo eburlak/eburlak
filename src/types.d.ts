@@ -5,6 +5,7 @@ declare type TSvgComponent = React.ComponentType<React.ComponentProps<'svg'>>;
 declare module 'notificit';
 
 interface Window {
+  ym?: (counterId: number, action: string, ...args: unknown[]) => void;
   notifications?: {
     addMessage: (data: {
       message: string;

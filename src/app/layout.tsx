@@ -4,6 +4,7 @@ import { getLocale, getTranslations } from 'next-intl/server';
 import { cookies } from 'next/headers';
 import React from 'react';
 
+import Metrica from '@/components/Metrica';
 import { Modals } from '@/components/Modal';
 import Footer from '@/containers/Footer';
 import Header from '@/containers/Header';
@@ -80,6 +81,7 @@ const Layout = async ({ children }: React.PropsWithChildren) => {
               </StyleProvider>
             </StoreProvider>
           </Theme>
+          <Metrica />
         </body>
       </html>
     </Notification>
