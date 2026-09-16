@@ -13,6 +13,7 @@ import * as S from './style';
 
 const Profile = () => {
   const t = useTranslations('profile');
+  const tCommon = useTranslations('common');
 
   return (
     <S.Wrapper>
@@ -34,7 +35,7 @@ const Profile = () => {
         </S.Name>
 
         <S.JobTitle>
-          {t('jobTitle')} at <strong>{profile.company}</strong>
+          {profile.jobTitle} {tCommon('at')} <strong>{profile.company}</strong>
         </S.JobTitle>
 
         <S.Location

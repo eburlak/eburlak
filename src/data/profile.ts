@@ -4,14 +4,23 @@ import MailIcon from '@/assets/icons/mail.svg';
 import NpmIcon from '@/assets/icons/npm.svg';
 import TelegramIcon from '@/assets/icons/telegram.svg';
 
-export const SITE_URL = 'https://eburlak.github.io';
+const productionUrl = process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL;
+
+export const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  (productionUrl ? `https://${productionUrl}` : 'http://localhost:3000');
 
 const email = 'eugeneburlak@yandex.ru';
 
 export const profile = {
   name: 'Evgeniy Burlak',
   displayName: 'Evgeniy Burlak',
+  firstName: 'Evgeniy',
+  lastName: 'Burlak',
+  username: 'eburlak',
+  jobTitle: 'Senior Frontend Developer',
   company: 'edna',
+  companyUrl: 'https://edna.ru',
   locationLink: 'https://yandex.ru/maps/146/simferopol/',
   avatar: '/me.jpg',
   email,

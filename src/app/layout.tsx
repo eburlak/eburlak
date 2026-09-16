@@ -11,6 +11,7 @@ import { profile, SITE_URL } from '@/data/profile';
 import Notification from '@/providers/Notification';
 import Theme from '@/providers/Theme';
 import type { TTheme } from '@/providers/Theme';
+import * as i18nConstant from '@/i18n/constant';
 import * as themeConstant from '@/styles/constant';
 import StoreProvider from '@/store/provider';
 import Fonts from '@/styles/fonts';
@@ -19,10 +20,11 @@ import StyleProvider from '@/styles/provider';
 import ThemeProvider from '@/styles/themeProvider';
 
 export const generateMetadata = async (): Promise<Metadata> => {
+  const locale = await getLocale();
   const t = await getTranslations('profile');
 
-  const title = `${profile.name} - ${t('jobTitle')}`;
-  const description = `${t('jobTitle')} at ${profile.company}. ${t.raw('about')[0]}`;
+  const title = `${profile.name} - ${profile.jobTitle}`;
+  const description = t.raw('about')[0];
 
   return {
     metadataBase: new URL(SITE_URL),
@@ -34,11 +36,15 @@ export const generateMetadata = async (): Promise<Metadata> => {
     openGraph: {
       type: 'profile',
       url: SITE_URL,
+      siteName: profile.name,
+      locale: i18nConstant.openGraphLocales[locale],
+      firstName: profile.firstName,
+      lastName: profile.lastName,
+      username: profile.username,
       title,
       description,
     },
     twitter: { card: 'summary_large_image' },
-    alternates: { canonical: SITE_URL },
   };
 };
 

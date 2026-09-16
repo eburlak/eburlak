@@ -1,4 +1,7 @@
 const en = {
+  common: {
+    at: 'at',
+  },
   nav: {
     about: 'About',
     stack: 'Stack',
@@ -14,7 +17,6 @@ const en = {
     education: 'Education',
   },
   profile: {
-    jobTitle: 'Senior Frontend Developer',
     location: 'Simferopol · remote only',
     availability: 'Open to new opportunities',
     verified: 'verified',

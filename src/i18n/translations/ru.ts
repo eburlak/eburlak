@@ -1,4 +1,7 @@
 const ru = {
+  common: {
+    at: 'в',
+  },
   nav: {
     about: 'Обо мне',
     stack: 'Стек',
@@ -14,7 +17,6 @@ const ru = {
     education: 'Образование',
   },
   profile: {
-    jobTitle: 'Senior Frontend Developer',
     location: 'Симферополь · удалённо',
     availability: 'Открыт к предложениям',
     verified: 'подтверждён',
