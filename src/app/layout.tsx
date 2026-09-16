@@ -23,23 +23,24 @@ export const generateMetadata = async (): Promise<Metadata> => {
   const locale = await getLocale();
   const t = await getTranslations('profile');
 
-  const title = `${profile.name} - ${profile.jobTitle}`;
+  const name = t('name');
+  const title = `${name} - ${profile.jobTitle}`;
   const description = t.raw('about')[0];
 
   return {
     metadataBase: new URL(SITE_URL),
     title: {
       default: title,
-      template: `%s - ${profile.name}`,
+      template: `%s - ${name}`,
     },
     description,
     openGraph: {
       type: 'profile',
       url: SITE_URL,
-      siteName: profile.name,
+      siteName: name,
       locale: i18nConstant.openGraphLocales[locale],
-      firstName: profile.firstName,
-      lastName: profile.lastName,
+      firstName: t('firstName'),
+      lastName: t('lastName'),
       username: profile.username,
       title,
       description,

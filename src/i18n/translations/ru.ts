@@ -17,6 +17,9 @@ const ru = {
     education: 'Образование',
   },
   profile: {
+    name: 'Евгений Бурлак',
+    firstName: 'Евгений',
+    lastName: 'Бурлак',
     location: 'Симферополь · удалённо',
     availability: 'Открыт к предложениям',
     verified: 'подтверждён',

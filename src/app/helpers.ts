@@ -1,13 +1,23 @@
-import { getTranslations } from 'next-intl/server';
+import { getLocale, getTranslations } from 'next-intl/server';
 
 import { education } from '@/data/experience';
 import { profile, socials, SITE_URL } from '@/data/profile';
 import { stack } from '@/data/stack';
+import { getMessages, getOtherLocales } from '@/i18n/messages';
 
 const getWebLinks = () =>
   socials.map((social) => social.href).filter((href) => href.startsWith('http'));
 
+const getAlternateNames = async (locale: string) => {
+  const messages = await Promise.all(
+    getOtherLocales(locale).map((item) => getMessages(item)),
+  );
+
+  return messages.map((item) => item.profile.name);
+};
+
 export const getProfileJsonLd = async () => {
+  const locale = await getLocale();
   const t = await getTranslations('profile');
   const tEducation = await getTranslations('education');
 
@@ -17,9 +27,10 @@ export const getProfileJsonLd = async () => {
     mainEntity: {
       '@type': 'Person',
       '@id': `${SITE_URL}/#person`,
-      name: profile.name,
-      givenName: profile.firstName,
-      familyName: profile.lastName,
+      name: t('name'),
+      alternateName: await getAlternateNames(locale),
+      givenName: t('firstName'),
+      familyName: t('lastName'),
       jobTitle: profile.jobTitle,
       description: t.raw('about')[0],
       url: SITE_URL,

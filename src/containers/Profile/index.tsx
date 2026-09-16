@@ -20,7 +20,7 @@ const Profile = () => {
       <S.AvatarFrame>
         <Image
           src={profile.avatar}
-          alt={profile.name}
+          alt={t('name')}
           fill
           sizes="(min-width: 640px) 160px, 128px"
           priority
@@ -30,7 +30,7 @@ const Profile = () => {
 
       <S.Details>
         <S.Name>
-          <ScrambleText text={profile.name} />
+          <ScrambleText text={t('name')} />
           <Icon as={VerifiedIcon} aria-label={t('verified')} />
         </S.Name>
 

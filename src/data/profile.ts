@@ -10,10 +10,6 @@ export const SITE_URL =
 const email = 'eugeneburlak@yandex.ru';
 
 export const profile = {
-  name: 'Evgeniy Burlak',
-  displayName: 'Evgeniy Burlak',
-  firstName: 'Evgeniy',
-  lastName: 'Burlak',
   username: 'eburlak',
   jobTitle: 'Senior Frontend Developer',
   company: 'edna',

@@ -3,17 +3,23 @@ import { readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 
 import { profile } from '@/data/profile';
-import { themes } from '@/styles/theme';
+import * as i18nConstant from '@/i18n/constant';
+import { getMessages } from '@/i18n/messages';
 import * as themeConstant from '@/styles/constant';
+import { themes } from '@/styles/theme';
 
-export const alt = `${profile.name} - ${profile.jobTitle}`;
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
-const avatar = await readFile(join(process.cwd(), 'public', profile.avatar));
-const avatarSource = `data:image/jpeg;base64,${avatar.toString('base64')}`;
+const photo = await readFile(join(process.cwd(), 'public', profile.avatar));
+const photoSource = `data:image/jpeg;base64,${photo.toString('base64')}`;
 
+const { profile: messages } = await getMessages(i18nConstant.fallback);
 const { colors } = themes[themeConstant.fallback as keyof typeof themes];
+
+const photoWidth = 520;
+
+export const alt = `${messages.name} - ${profile.jobTitle}`;
 
 const Image = () =>
   new ImageResponse(
@@ -23,27 +29,52 @@ const Image = () =>
           width: '100%',
           height: '100%',
           display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          gap: 40,
-          padding: 80,
           background: colors.background,
           color: colors.foreground,
         }}
       >
         <img
-          src={avatarSource}
-          width={200}
-          height={200}
-          style={{ borderRadius: '50%', border: `4px solid ${colors.edge}` }}
+          src={photoSource}
+          width={photoWidth}
+          height={size.height}
+          style={{ objectFit: 'cover' }}
           alt=""
         />
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-          <div style={{ fontSize: 76, fontWeight: 700, letterSpacing: -2 }}>
-            {profile.name}
+        <div
+          style={{
+            flex: 1,
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            gap: 20,
+            padding: 64,
+          }}
+        >
+          <div style={{ fontSize: 72, fontWeight: 700, letterSpacing: -2 }}>
+            {messages.name}
           </div>
-          <div style={{ fontSize: 40, color: colors.mutedForeground }}>
-            {`${profile.jobTitle} at ${profile.company}`}
+          <div style={{ fontSize: 36, color: colors.mutedForeground }}>
+            {profile.jobTitle}
+          </div>
+          <div
+            style={{
+              marginTop: 12,
+              display: 'flex',
+              alignItems: 'center',
+              gap: 14,
+              fontSize: 30,
+              color: colors.mutedForeground,
+            }}
+          >
+            <div
+              style={{
+                width: 14,
+                height: 14,
+                borderRadius: '50%',
+                background: colors.online,
+              }}
+            />
+            {profile.company}
           </div>
         </div>
       </div>

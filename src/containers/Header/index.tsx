@@ -5,7 +5,6 @@ import React from 'react';
 
 import LocaleSwitcher from '@/components/LocaleSwitcher';
 import ThemeToggle from '@/components/ThemeToggle';
-import { profile } from '@/data/profile';
 import { useActiveSection } from '@/hooks';
 
 import * as S from './style';
@@ -21,6 +20,7 @@ const navSectionIds = navItems.map((item) => item.id);
 
 const Header = () => {
   const t = useTranslations('nav');
+  const tProfile = useTranslations('profile');
   const [scrolled, setScrolled] = React.useState(false);
   const activeId = useActiveSection(navSectionIds);
 
@@ -34,7 +34,7 @@ const Header = () => {
   return (
     <S.Wrapper $scrolled={scrolled}>
       <S.Inner>
-        <S.Brand href="/#top">{profile.displayName}</S.Brand>
+        <S.Brand href="/#top">{tProfile('name')}</S.Brand>
 
         <S.Actions>
           <S.Nav>

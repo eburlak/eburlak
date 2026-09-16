@@ -17,6 +17,9 @@ const en = {
     education: 'Education',
   },
   profile: {
+    name: 'Evgeniy Burlak',
+    firstName: 'Evgeniy',
+    lastName: 'Burlak',
     location: 'Simferopol · remote only',
     availability: 'Open to new opportunities',
     verified: 'verified',
