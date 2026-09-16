@@ -4,11 +4,8 @@ import MailIcon from '@/assets/icons/mail.svg';
 import NpmIcon from '@/assets/icons/npm.svg';
 import TelegramIcon from '@/assets/icons/telegram.svg';
 
-const productionUrl = process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL;
-
 export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ??
-  (productionUrl ? `https://${productionUrl}` : 'http://localhost:3000');
+  process.env.NEXT_PUBLIC_SITE_URL ?? 'https://eburlak.vercel.app';
 
 const email = 'eugeneburlak@yandex.ru';
 
