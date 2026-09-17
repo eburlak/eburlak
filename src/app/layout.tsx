@@ -48,6 +48,7 @@ export const generateMetadata = async (): Promise<Metadata> => {
       description,
     },
     twitter: { card: 'summary_large_image' },
+    verification: { yandex: 'b64cf8478b8a7826' },
   };
 };
 
