@@ -17,7 +17,7 @@ export const profile = {
   locationLink: 'https://yandex.ru/maps/146/simferopol/',
   avatar: '/me.jpg',
   email,
-  available: true,
+  available: false,
 };
 
 export type Social = {
