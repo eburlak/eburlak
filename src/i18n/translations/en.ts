@@ -50,6 +50,7 @@ const en = {
         'chat-center: moved around 80% of an eight-year-old codebase from class to function components and from SCSS to styled-components, without pausing product work.',
         'Built the mobile version of the interface from scratch on my own and took part in the full interface redesign.',
         'Helped introduce testing: the project had none, now every new piece of code is covered with Jest and @testing-library/react.',
+        'I take part in estimation and grooming: work through requirements with the analyst and the team before a task enters the sprint, shape the spec from the frontend side and write spikes where the implementation is not obvious.',
         'I contribute to the internal component library used by 8+ frontend developers, ran around 10 technical interviews and mentored a colleague from junior to middle.',
       ],
     },
