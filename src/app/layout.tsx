@@ -15,7 +15,7 @@ import Notification from '@/providers/Notification';
 import Theme from '@/providers/Theme';
 import type { TTheme } from '@/providers/Theme';
 import * as consentConstant from '@/consent/constant';
-import type { TConsent } from '@/consent/constant';
+import { getRecord } from '@/consent/helpers';
 import * as i18nConstant from '@/i18n/constant';
 import * as themeConstant from '@/styles/constant';
 import StoreProvider from '@/store/provider';
@@ -67,13 +67,7 @@ const Layout = async ({ children }: React.PropsWithChildren) => {
       : themeConstant.fallback
   ) as TTheme;
 
-  const consentCookie = cookieStore.get(consentConstant.key)?.value;
-
-  const consent = (
-    consentCookie && consentConstant.list.includes(consentCookie)
-      ? consentCookie
-      : null
-  ) as TConsent | null;
+  const consent = getRecord(cookieStore.get(consentConstant.key)?.value);
 
   return (
     <Notification>
@@ -89,13 +83,13 @@ const Layout = async ({ children }: React.PropsWithChildren) => {
                     <Modals />
                     {children}
                     <Footer />
-                    <Consent initial={consent} />
+                    <Consent initial={consent?.value ?? null} />
                   </NextIntlClientProvider>
                 </ThemeProvider>
               </StyleProvider>
             </StoreProvider>
           </Theme>
-          {consent === 'granted' && <Metrica />}
+          {consent?.value === 'granted' && <Metrica />}
         </body>
       </html>
     </Notification>

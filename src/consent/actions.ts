@@ -1,8 +1,17 @@
 'use client';
 
-import { key, maxAgeSeconds } from './constant';
+import { removeCookiesByPrefix } from '@/utils';
+
+import { analyticsCookiePrefix, key, maxAgeSeconds } from './constant';
 import type { TConsent } from './constant';
+import { getSerializedRecord } from './helpers';
 
 export const setConsent = (value: TConsent) => {
-  document.cookie = `${key}=${value}; path=/; max-age=${maxAgeSeconds}`;
+  const record = getSerializedRecord(value);
+
+  document.cookie = `${key}=${record}; path=/; max-age=${maxAgeSeconds}`;
+
+  if (value === 'denied') {
+    removeCookiesByPrefix(analyticsCookiePrefix);
+  }
 };

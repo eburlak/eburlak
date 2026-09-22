@@ -118,7 +118,7 @@ const en = {
     link: 'Data policy',
     title: 'Personal data processing policy',
     description: 'What this site collects, what for, and how to opt out.',
-    updated: 'Revision of 22 September 2026',
+    updated: 'Revision of {date, date, long}',
     operator: {
       title: 'Operator',
       items: [

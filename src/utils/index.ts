@@ -98,12 +98,49 @@ export const getCookie = (name: string) => {
   return null;
 };
 
-export const removeCookie = (name: string) => {
+export const removeCookie = (name: string, domain?: string) => {
   if (typeof document === 'undefined') {
     return null;
   }
 
-  document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+  const attributes = ['path=/', 'expires=Thu, 01 Jan 1970 00:00:00 UTC'];
+
+  if (domain) {
+    attributes.push(`domain=${domain}`);
+  }
+
+  document.cookie = `${name}=; ${attributes.join('; ')};`;
+};
+
+/** Every domain a cookie on this host could have been written for, widest last. */
+const getCookieDomains = () => {
+  const parts = window.location.hostname.split('.');
+  const domains: (string | undefined)[] = [undefined];
+
+  for (let index = 0; index < parts.length - 1; index += 1) {
+    const domain = parts.slice(index).join('.');
+
+    domains.push(domain, `.${domain}`);
+  }
+
+  return domains;
+};
+
+export const removeCookiesByPrefix = (prefix: string) => {
+  if (typeof document === 'undefined') {
+    return null;
+  }
+
+  const names = document.cookie
+    .split(';')
+    .map((cookie) => cookie.split('=')[0].trim())
+    .filter((name) => name.startsWith(prefix));
+
+  const domains = getCookieDomains();
+
+  names.forEach((name) => {
+    domains.forEach((domain) => removeCookie(name, domain));
+  });
 };
 
 export const wait = (delay = 600) =>

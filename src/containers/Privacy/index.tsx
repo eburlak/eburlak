@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl';
 
 import { consent } from '@/components/Consent';
 import Section from '@/components/Section';
+import { getVersionDate } from '@/consent/helpers';
 import { profile, SITE_URL } from '@/data/profile';
 
 import List from './components/List';
@@ -102,7 +103,7 @@ const Privacy = () => {
         </S.Actions>
       </Section>
 
-      <S.Updated>{t('updated')}</S.Updated>
+      <S.Updated>{t('updated', { date: getVersionDate() })}</S.Updated>
     </>
   );
 };
