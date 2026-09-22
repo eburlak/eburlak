@@ -74,33 +74,31 @@ const Privacy = () => {
         </S.Table>
 
         <p>{t('cookies.note')}</p>
+
+        <S.Actions>
+          <S.Action type="button" onClick={consent.open}>
+            {t('cookies.action')}
+          </S.Action>
+        </S.Actions>
       </Section>
 
       <Section id="sharing" title={t('sharing.title')}>
         <List path="sharing.items" />
         <p>{t('sharing.note')}</p>
+
+        <S.Actions>
+          <S.Link href={YANDEX_POLICY_URL} target="_blank" rel="noreferrer">
+            {t('sharing.yandexPolicy')}
+          </S.Link>
+
+          <S.Link href={YANDEX_OPT_OUT_URL} target="_blank" rel="noreferrer">
+            {t('sharing.optOut')}
+          </S.Link>
+        </S.Actions>
       </Section>
 
       <Section id="retention" title={t('retention.title')}>
         <List path="retention.items" />
-      </Section>
-
-      <Section id="rights" title={t('rights.title')}>
-        <List path="rights.items" values={{ email }} />
-
-        <S.Actions>
-          <S.Action type="button" onClick={consent.open}>
-            {t('rights.action')}
-          </S.Action>
-
-          <S.Link href={YANDEX_POLICY_URL} target="_blank" rel="noreferrer">
-            {t('rights.yandexPolicy')}
-          </S.Link>
-
-          <S.Link href={YANDEX_OPT_OUT_URL} target="_blank" rel="noreferrer">
-            {t('rights.optOut')}
-          </S.Link>
-        </S.Actions>
       </Section>
 
       <S.Updated>{t('updated', { date: getVersionDate() })}</S.Updated>

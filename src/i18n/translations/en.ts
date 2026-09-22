@@ -146,7 +146,8 @@ const en = {
     },
     cookies: {
       title: 'Cookies',
-      note: 'Analytics cookies are set only after consent: until the banner is answered the counter is not loaded at all.',
+      note: 'Analytics cookies are set only after consent: until the banner is answered the counter is not loaded at all. You can withdraw consent at any time with the button below; after a refusal the Metrica cookies are deleted.',
+      action: 'Cookie settings',
       columns: {
         name: 'Cookie',
         purpose: 'Purpose',
@@ -194,6 +195,8 @@ const en = {
         'Vercel Inc., USA - hosting. Server logs record the IP address, request time and page address.',
       ],
       note: 'Transfers to npm, Inc. and Vercel Inc. are cross-border: both companies sit outside Russia.',
+      yandexPolicy: 'Yandex policy on data',
+      optOut: 'Opt out of Yandex.Metrica',
     },
     retention: {
       title: 'Retention',
@@ -202,19 +205,6 @@ const en = {
         'Statistics inside Yandex.Metrica are kept by the service under its own rules.',
         'Server logs are kept by the hosting provider for the period it sets.',
       ],
-    },
-    rights: {
-      title: 'Your rights',
-      items: [
-        'Request information about the processing of your data, ask for it to be corrected, blocked or erased - by writing to {email}.',
-        'Withdraw consent to analytics at any time: the button below brings the banner back, and after a refusal the counter stops loading.',
-        'Delete cookies that were already set, from your browser.',
-        'Switch Yandex.Metrica off across every site at once with the official Yandex add-on.',
-        'Appeal against the operator to Roskomnadzor or in court.',
-      ],
-      action: 'Cookie settings',
-      yandexPolicy: 'Yandex policy on data',
-      optOut: 'Opt out of Yandex.Metrica',
     },
   },
   locale: {
