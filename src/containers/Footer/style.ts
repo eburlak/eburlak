@@ -1,6 +1,8 @@
-import styled from 'styled-components';
+import Link from 'next/link';
+import styled, { css } from 'styled-components';
 
 import { dashedEdge, stripes } from '@/styles/mixins';
+import { duration } from '@/styles/animations';
 import { font, layout } from '@/styles/theme';
 
 export const Wrapper = styled.footer`
@@ -18,9 +20,39 @@ export const Gutter = styled.div`
 `;
 
 export const Credits = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
   padding: 24px 16px;
   text-align: center;
   font-family: ${font.mono};
   font-size: 12px;
   color: ${({ theme }) => theme.colors.mutedForeground};
+`;
+
+export const Links = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+`;
+
+const hoverable = css`
+  transition: color ${duration.fast}ms ease;
+
+  &:hover {
+    color: ${({ theme }) => theme.colors.foreground};
+  }
+`;
+
+export const PolicyLink = styled(Link)`
+  ${hoverable}
+`;
+
+export const Settings = styled.button`
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  ${hoverable}
 `;

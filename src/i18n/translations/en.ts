@@ -105,6 +105,118 @@ const en = {
     fps: 'fps',
     viewport: 'viewport',
   },
+  consent: {
+    label: 'Data processing',
+    message:
+      'This site counts visits with Yandex.Metrica. It collects your IP address, browser details and cookies - under Russian law that counts as personal data. Nothing is loaded until you answer.',
+    policy: 'Read the policy',
+    accept: 'Accept',
+    deny: 'Necessary only',
+    settings: 'Cookie settings',
+  },
+  privacy: {
+    link: 'Data policy',
+    title: 'Personal data processing policy',
+    description: 'What this site collects, what for, and how to opt out.',
+    updated: 'Revision of 22 September 2026',
+    operator: {
+      title: 'Operator',
+      items: [
+        'The data operator is Evgeniy Burlak, a private individual and the owner of {site}.',
+        'Questions about processing, withdrawal of consent and erasure requests go to {email}.',
+      ],
+    },
+    data: {
+      title: 'What is processed',
+      note: 'The site never asks for your name, phone or email: there are no forms and no sign-up. Only what the browser sends on its own is processed.',
+      items: [
+        'IP address and the region derived from it.',
+        'Browser and device details: user agent, operating system version, screen resolution, language.',
+        'Referrer, pages viewed, time spent on them and clicks on links.',
+        'Cookie identifiers that tie visits from one browser into a session.',
+      ],
+    },
+    purposes: {
+      title: 'Purposes and legal basis',
+      items: [
+        'Traffic analytics - to see which sections get read and from which devices. Basis: your consent under clause 1 part 1 article 6 of Federal Law 152-FZ, given in the banner and revocable at any time.',
+        'Running the site itself - remembering the chosen language, the colour theme and your answer about consent. Without them the site cannot honour your own choice; they are not used for profiling.',
+      ],
+      note: 'The data is not used for advertising, is not sold, and goes to nobody beyond the recipients listed below.',
+    },
+    cookies: {
+      title: 'Cookies',
+      note: 'Analytics cookies are set only after consent: until the banner is answered the counter is not loaded at all.',
+      columns: {
+        name: 'Cookie',
+        purpose: 'Purpose',
+        lifetime: 'Lifetime',
+        group: 'Category',
+      },
+      rows: [
+        {
+          name: 'locale',
+          purpose: 'Chosen interface language',
+          lifetime: '1 year',
+          group: 'Necessary',
+        },
+        {
+          name: 'theme',
+          purpose: 'Chosen colour theme',
+          lifetime: '1 year',
+          group: 'Necessary',
+        },
+        {
+          name: 'consent',
+          purpose: 'Your answer to the consent request',
+          lifetime: '6 months',
+          group: 'Necessary',
+        },
+        {
+          name: '_ym_uid, _ym_d',
+          purpose: 'Visitor identifier and first visit date, Yandex.Metrica',
+          lifetime: '1 year',
+          group: 'Analytics',
+        },
+        {
+          name: 'other _ym_*',
+          purpose: 'Service cookies of Yandex.Metrica',
+          lifetime: 'session to 1 year',
+          group: 'Analytics',
+        },
+      ],
+    },
+    sharing: {
+      title: 'Who receives the data',
+      items: [
+        'Yandex LLC, Russia - the Yandex.Metrica service, processing data on the operator behalf. Its servers are located in Russia.',
+        'npm, Inc., USA - when you open the Packages section, your browser itself calls registry.npmjs.org and api.npmjs.org for versions and download counts; your IP address and user agent travel with those requests.',
+        'Vercel Inc., USA - hosting. Server logs record the IP address, request time and page address.',
+      ],
+      note: 'Transfers to npm, Inc. and Vercel Inc. are cross-border: both companies sit outside Russia.',
+    },
+    retention: {
+      title: 'Retention',
+      items: [
+        'Cookies live in your browser for as long as the table above says, and disappear sooner if you clear site data.',
+        'Statistics inside Yandex.Metrica are kept by the service under its own rules.',
+        'Server logs are kept by the hosting provider for the period it sets.',
+      ],
+    },
+    rights: {
+      title: 'Your rights',
+      items: [
+        'Request information about the processing of your data, ask for it to be corrected, blocked or erased - by writing to {email}.',
+        'Withdraw consent to analytics at any time: the button below brings the banner back, and after a refusal the counter stops loading.',
+        'Delete cookies that were already set, from your browser.',
+        'Switch Yandex.Metrica off across every site at once with the official Yandex add-on.',
+        'Appeal against the operator to Roskomnadzor or in court.',
+      ],
+      action: 'Cookie settings',
+      yandexPolicy: 'Yandex policy on data',
+      optOut: 'Opt out of Yandex.Metrica',
+    },
+  },
   locale: {
     switch: 'Switch to {locale}',
     ru: 'Russian',

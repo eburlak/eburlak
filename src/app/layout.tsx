@@ -4,6 +4,7 @@ import { getLocale, getTranslations } from 'next-intl/server';
 import { cookies } from 'next/headers';
 import React from 'react';
 
+import Consent from '@/components/Consent';
 import Metrica from '@/components/Metrica';
 import { Modals } from '@/components/Modal';
 import Footer from '@/containers/Footer';
@@ -13,6 +14,8 @@ import { profile, SITE_URL } from '@/data/profile';
 import Notification from '@/providers/Notification';
 import Theme from '@/providers/Theme';
 import type { TTheme } from '@/providers/Theme';
+import * as consentConstant from '@/consent/constant';
+import type { TConsent } from '@/consent/constant';
 import * as i18nConstant from '@/i18n/constant';
 import * as themeConstant from '@/styles/constant';
 import StoreProvider from '@/store/provider';
@@ -64,6 +67,14 @@ const Layout = async ({ children }: React.PropsWithChildren) => {
       : themeConstant.fallback
   ) as TTheme;
 
+  const consentCookie = cookieStore.get(consentConstant.key)?.value;
+
+  const consent = (
+    consentCookie && consentConstant.list.includes(consentCookie)
+      ? consentCookie
+      : null
+  ) as TConsent | null;
+
   return (
     <Notification>
       <html className={Fonts.className} lang={locale}>
@@ -78,12 +89,13 @@ const Layout = async ({ children }: React.PropsWithChildren) => {
                     <Modals />
                     {children}
                     <Footer />
+                    <Consent initial={consent} />
                   </NextIntlClientProvider>
                 </ThemeProvider>
               </StyleProvider>
             </StoreProvider>
           </Theme>
-          <Metrica />
+          {consent === 'granted' && <Metrica />}
         </body>
       </html>
     </Notification>

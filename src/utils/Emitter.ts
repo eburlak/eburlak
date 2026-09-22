@@ -39,6 +39,7 @@ export enum EEvents {
   SET_TOKEN = 'SET_TOKEN',
   MODAL_OPEN = 'MODAL_OPEN',
   MODAL_CLOSE = 'MODAL_CLOSE',
+  CONSENT_OPEN = 'CONSENT_OPEN',
 }
 
 export default emitter;
