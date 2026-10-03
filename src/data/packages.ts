@@ -28,4 +28,11 @@ export const packages: Package[] = [
     repo: 'https://github.com/eburlak/notificit',
     demo: 'https://eburlak.github.io/notificit',
   },
+  {
+    name: '@eburlak/tooltip',
+    version: '0.2.0',
+    npm: 'https://www.npmjs.com/package/@eburlak/tooltip',
+    repo: 'https://github.com/eburlak/tooltip',
+    demo: 'https://eburlak.github.io/tooltip',
+  },
 ];

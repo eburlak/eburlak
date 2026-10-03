@@ -13,6 +13,7 @@ import { getExperienceYears } from '@/data/experience';
 import { profile, SITE_URL } from '@/data/profile';
 import Notification from '@/providers/Notification';
 import Theme from '@/providers/Theme';
+import TooltipProvider from '@/providers/Tooltip';
 import type { TTheme } from '@/providers/Theme';
 import * as consentConstant from '@/consent/constant';
 import { getRecord } from '@/consent/helpers';
@@ -74,6 +75,7 @@ const Layout = async ({ children }: React.PropsWithChildren) => {
       <html className={Fonts.className} lang={locale}>
         <body>
           <Theme theme={theme}>
+            <TooltipProvider />
             <StoreProvider>
               <StyleProvider>
                 <ThemeProvider>

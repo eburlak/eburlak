@@ -93,6 +93,8 @@ const en = {
       'Input masks: declarative mask syntax, wiring through data attributes, lifecycle callbacks and cyrillic support.',
     notificit:
       'Notifications: configurable animations, close modes, a global loading indicator and class-name customisation.',
+    '@eburlak/tooltip':
+      'Tooltips: one shared element gliding between anchors, wiring through data attributes, themes and accessibility out of the box.',
   },
   notFound: {
     status: 'Page not found',

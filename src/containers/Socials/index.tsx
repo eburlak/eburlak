@@ -16,7 +16,7 @@ const Socials = () => {
     <Section id="connect" title={t('connect')}>
       <S.Wrapper>
         {socials.map((social) => (
-          <S.Item key={social.name}>
+          <S.Item key={social.name} data-tooltip={social.name}>
             <S.Link
               href={social.href}
               target="_blank"
