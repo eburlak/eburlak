@@ -1,112 +1,59 @@
-# eburlak.github.io
+<div align="center">
 
-Resume site built with Next.js 16 (App Router, static export), styled-components and next-themes.
-No CSS framework - every style is a styled-component; global tokens and the reset live in
-`src/styles/global-style.ts`.
-Design is inspired by [chanhdai.com](https://chanhdai.com): a single centered column framed by
-dashed rules, sections separated by full-width dashed lines, light/dark/system themes.
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=26&duration=3200&pause=900&color=61DAFB&center=true&vCenter=true&width=640&height=48&lines=Hi%2C+I'm+Evgeniy+Burlak+%F0%9F%91%8B;Senior+Frontend+Developer;React+%C2%B7+TypeScript+%C2%B7+Redux+%C2%B7+Node.js;Charts+and+data+visualisation" alt="Hi, I'm Evgeniy Burlak" />
 
-## Content
+**Senior Frontend Developer** · Simferopol · remote only
 
-All text lives in `src/data` - no content is hardcoded in components:
+[![Site](https://img.shields.io/badge/eburlak.vercel.app-000?style=flat-square&logo=vercel&logoColor=white)](https://eburlak.vercel.app)
+[![npm](https://img.shields.io/badge/npm-~eburlak-cb3837?style=flat-square&logo=npm&logoColor=white)](https://www.npmjs.com/~eburlak)
+[![Telegram](https://img.shields.io/badge/Telegram-@eburlak-26a5e4?style=flat-square&logo=telegram&logoColor=white)](https://t.me/eburlak)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-evgeniy--burlak-0a66c2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/evgeniy-burlak-5216b4125)
+[![Email](https://img.shields.io/badge/Email-eugeneburlak@yandex.ru-ea4335?style=flat-square&logo=maildotru&logoColor=white)](mailto:eugeneburlak@yandex.ru)
 
-| File                    | What it holds                                              |
-| ----------------------- | ---------------------------------------------------------- |
-| `src/data/profile.ts`   | name, job title, location, about paragraphs, social links   |
-| `src/data/stack.ts`     | tech stack: name, link and the local icon of each tool      |
-| `src/data/experience.ts`| work history and education                                  |
-| `src/data/projects.ts`  | npm packages shown in the Projects section (fallback data)   |
+</div>
 
-Places still waiting for the real CV text are marked with `TODO:`.
+## Now
 
-## Live package data
+- 💼 Building product frontends in React and TypeScript
+- 📈 Maintaining my own TypeScript charting library and a few small npm packages
 
-The Projects section does not trust its own file for numbers: `src/hooks/use-npm-registry.ts`
-asks [registry.npmjs.org](https://registry.npmjs.org) (abbreviated packument) for the latest
-version and last change, and `api.npmjs.org` for last-week downloads, straight from the browser -
-the site stays a static export.
+## Stack
 
-While the requests are in flight the values are `src/components/skeleton.tsx` shimmer bars, the
-section header shows an ASCII spinner (`src/components/spinner.tsx`) and `reading registry`;
-skeletons are held for at least 450ms so the state reads as a state rather than a flash. When the
-data lands, the header switches to `npm live`, the download counter rolls up with
-`src/hooks/use-count-up.ts` and the version settles through `ScrambleText`. The reload button
-refetches on demand.
+<p>
+  <img src="https://skillicons.dev/icons?i=ts,js,nodejs,react,redux,nextjs,styledcomponents,sass,less&theme=dark" alt="Languages and frontend" />
+  <br />
+  <img src="https://skillicons.dev/icons?i=jest,vite,webpack,docker,git,electron,figma&theme=dark" alt="Testing, build and tools" />
+</p>
 
-If npm cannot be reached the header says `cached`, versions fall back to `src/data/projects.ts`
-and a missing number renders as `n/a` - never an endless skeleton.
+## Open source
 
-## Icons
+- [**burlak**](https://github.com/eburlak/burlak) - charts [![npm](https://img.shields.io/npm/v/burlak?style=flat-square&color=cb3837)](https://www.npmjs.com/package/burlak)
+- [**maskit**](https://github.com/eburlak/maskit) - input masks [![npm](https://img.shields.io/npm/v/maskit?style=flat-square&color=cb3837)](https://www.npmjs.com/package/maskit)
+- [**notificit**](https://github.com/eburlak/notificit) - toast notifications [![npm](https://img.shields.io/npm/v/notificit?style=flat-square&color=cb3837)](https://www.npmjs.com/package/notificit)
+- [**@eburlak/tooltip**](https://github.com/eburlak/tooltip) - tooltips [![npm](https://img.shields.io/npm/v/@eburlak/tooltip?style=flat-square&color=cb3837)](https://www.npmjs.com/package/@eburlak/tooltip)
 
-UI icons are plain SVG files in `src/assets/icons`, one per icon, named in camelCase and drawn
-with `currentColor` so they inherit the text colour. `@svgr/webpack` (wired up through the
-`turbopack.rules` entry in `next.config.ts`) turns every import into a React component:
+## GitHub stats
 
-```tsx
-import ArrowLeftIcon from "@/assets/icons/arrowLeft.svg";
-import { Icon } from "@/components/icon";
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username=eburlak&show_icons=true&hide_border=true&include_all_commits=true&theme=github_dark" />
+    <img height="170" src="https://github-readme-stats.vercel.app/api?username=eburlak&show_icons=true&hide_border=true&include_all_commits=true" alt="GitHub stats" />
+  </picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=eburlak&layout=compact&hide_border=true&theme=github_dark" />
+    <img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=eburlak&layout=compact&hide_border=true" alt="Top languages" />
+  </picture>
+</p>
 
-<Icon as={ArrowLeftIcon} />;
-```
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com?user=eburlak&hide_border=true&theme=github-dark-blue" />
+    <img src="https://streak-stats.demolab.com?user=eburlak&hide_border=true" alt="GitHub streak" />
+  </picture>
+</p>
 
-`src/components/icon.tsx` is the single sizing base (1rem, `flex-shrink: 0`) that every icon on
-the page goes through; wherever a place needs another size, the parent styled-component keeps
-overriding it with its own `svg { ... }` rule.
+<div align="center">
 
-Brand marks live in the same folder and work the same way - no icon package at runtime. To add
-one, download the SVG from [simple-icons](https://simpleicons.org) (CC0), strip its `width`,
-`height` and `title`, and set `fill="currentColor"` on the root so it follows the text colour.
-A few marks are missing from that set - LinkedIn, for one, was withdrawn from it - and come
-from [bootstrap-icons](https://icons.getbootstrap.com) (MIT) instead.
+![Profile views](https://komarev.com/ghpvc/?username=eburlak&style=flat-square&color=61dafb&label=profile+views)
 
-## Styling
-
-| File                          | What it holds                                                   |
-| ----------------------------- | --------------------------------------------------------------- |
-| `src/styles/theme.ts`         | design tokens as `var(--...)` references, breakpoints            |
-| `src/styles/global-style.ts`  | `createGlobalStyle`: reset plus light/dark CSS variables         |
-| `src/styles/mixins.ts`        | shared `css` fragments: dashed screen-wide rules, stripes        |
-| `src/components/styled-registry.tsx` | collects styles during SSR so the export ships them inline |
-
-Dark mode is a `.dark` class on `<html>` toggled by `next-themes`; the class only swaps CSS
-variables, so no styled-component re-renders on theme change.
-
-## Pages
-
-`/` is the resume itself. `/template/` is a copy-me starting point for any new page - it is
-marked `noindex` and can be deleted once you no longer need it.
-
-To add a page: copy `src/app/template/` to `src/app/<slug>/`, then edit the `metadata` and the
-sections. The building blocks:
-
-| Component      | What it gives you                                                     |
-| -------------- | ---------------------------------------------------------------------- |
-| `PageShell`    | dashed column, back link, page title and description, closing gutter    |
-| `Section`      | sticky heading bar: auto number, mono uppercase title, screen-wide rule |
-| `SectionBody`  | padded muted body text with spacing between paragraphs                  |
-
-Section numbers are a CSS counter: `MainColumn` resets it, every `Section` increments it, so
-adding or reordering sections renumbers them with no prop to pass. Heading bars stick below the
-site header while their own section is on screen, which is why `scroll-padding-top` in
-`src/styles/global-style.ts` reserves room for both bars.
-
-`src/app/not-found.tsx` is the 404 page; the static export writes it to `out/404.html`, which is
-exactly what GitHub Pages serves for unknown paths.
-
-## Development
-
-```bash
-npm install
-npm run dev     # http://localhost:3000
-npm run build   # static export into ./out
-npm run lint
-```
-
-## Deploy
-
-`.github/workflows/deploy.yml` builds the export and publishes it to GitHub Pages on every push
-to `main`. One-time setup in the repository: **Settings → Pages → Build and deployment → Source:
-GitHub Actions**.
-
-Since the repository is a user site (`eburlak.github.io`), the site is served from the domain
-root, so no `basePath` is needed.
+</div>
