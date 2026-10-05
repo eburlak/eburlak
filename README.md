@@ -32,26 +32,6 @@
 - [**notificit**](https://github.com/eburlak/notificit) - toast notifications [![npm](https://img.shields.io/npm/v/notificit?style=flat-square&color=cb3837)](https://www.npmjs.com/package/notificit)
 - [**@eburlak/tooltip**](https://github.com/eburlak/tooltip) - tooltips [![npm](https://img.shields.io/npm/v/@eburlak/tooltip?style=flat-square&color=cb3837)](https://www.npmjs.com/package/@eburlak/tooltip)
 
-## GitHub stats
-
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username=eburlak&show_icons=true&hide_border=true&include_all_commits=true&theme=github_dark" />
-    <img height="170" src="https://github-readme-stats.vercel.app/api?username=eburlak&show_icons=true&hide_border=true&include_all_commits=true" alt="GitHub stats" />
-  </picture>
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=eburlak&layout=compact&hide_border=true&theme=github_dark" />
-    <img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=eburlak&layout=compact&hide_border=true" alt="Top languages" />
-  </picture>
-</p>
-
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com?user=eburlak&hide_border=true&theme=github-dark-blue" />
-    <img src="https://streak-stats.demolab.com?user=eburlak&hide_border=true" alt="GitHub streak" />
-  </picture>
-</p>
-
 <div align="center">
 
 ![Profile views](https://komarev.com/ghpvc/?username=eburlak&style=flat-square&color=61dafb&label=profile+views)
