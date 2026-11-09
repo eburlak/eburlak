@@ -6,6 +6,7 @@
 
 [![Site](https://img.shields.io/badge/eburlak.vercel.app-000?style=flat-square&logo=vercel&logoColor=white)](https://eburlak.vercel.app)
 [![npm](https://img.shields.io/badge/npm-~eburlak-cb3837?style=flat-square&logo=npm&logoColor=white)](https://www.npmjs.com/~eburlak)
+[![CodePen](https://img.shields.io/badge/CodePen-eburlak-000?style=flat-square&logo=codepen&logoColor=white)](https://codepen.io/eburlak)
 [![Telegram](https://img.shields.io/badge/Telegram-@eburlak-26a5e4?style=flat-square&logo=telegram&logoColor=white)](https://t.me/eburlak)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-evgeniy--burlak-0a66c2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/evgeniy-burlak-5216b4125)
 [![Email](https://img.shields.io/badge/Email-eugeneburlak@yandex.ru-ea4335?style=flat-square&logo=maildotru&logoColor=white)](mailto:eugeneburlak@yandex.ru)

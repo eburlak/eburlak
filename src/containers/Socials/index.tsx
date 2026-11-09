@@ -25,7 +25,7 @@ const Socials = () => {
             >
               <S.Name>
                 <Icon as={social.icon} />
-                {social.name}
+                <S.Title>{social.name}</S.Title>
                 <S.Jump as={ArrowUpRightIcon} aria-hidden="true" />
               </S.Name>
               <S.Handle>{social.handle}</S.Handle>

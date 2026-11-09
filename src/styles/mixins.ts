@@ -4,6 +4,10 @@ import { font } from './theme';
 
 export const dashedEdge = css`1px dashed ${({ theme }) => theme.colors.edge}`;
 
+export const getColumnsCss = (columns: number) => css`
+  flex: 0 0 calc(100% / ${columns});
+`;
+
 /**
  * Dashed rule anchored to the element edge but drawn across the whole viewport.
  * It sits inside the element's own bottom edge: a sticky element keeps it in view, and

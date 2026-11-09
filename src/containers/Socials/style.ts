@@ -1,45 +1,42 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import Icon from '@/components/Icon';
-import { dashedEdge } from '@/styles/mixins';
+import { dashedEdge, getColumnsCss } from '@/styles/mixins';
 import { duration, easing } from '@/styles/animations';
 import { font, media } from '@/styles/theme';
 
-const COLUMNS = 5;
+const getEdgesCss = (columns: number) => css`
+  &:nth-child(n) {
+    border-top: ${dashedEdge};
+    border-right: ${dashedEdge};
+  }
 
-export const Wrapper = styled.ul`
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
+  &:nth-child(-n + ${columns}) {
+    border-top: none;
+  }
 
-  ${media.small} {
-    grid-template-columns: repeat(${COLUMNS}, minmax(0, 1fr));
+  &:nth-child(${columns}n),
+  &:last-child {
+    border-right: none;
   }
 `;
 
-/**
- * Rules sit between cells only - the outer edges belong to the column and to the
- * next heading. Both are keyed to the column count, so the grid survives a contact
- * being added or removed.
- */
+const getGridCss = (columns: number) => css`
+  ${getColumnsCss(columns)}
+  ${getEdgesCss(columns)}
+`;
+
+export const Wrapper = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+`;
+
 export const Item = styled.li`
-  &:nth-child(n + 2) {
-    border-top: ${dashedEdge};
-  }
+  min-width: 0;
+  ${getGridCss(1)}
 
   ${media.small} {
-    border-right: ${dashedEdge};
-
-    &:nth-child(${COLUMNS}n) {
-      border-right: none;
-    }
-
-    &:nth-child(-n + ${COLUMNS}) {
-      border-top: none;
-    }
-
-    &:nth-child(n + ${COLUMNS + 1}) {
-      border-top: ${dashedEdge};
-    }
+    ${getGridCss(3)}
   }
 `;
 
@@ -58,9 +55,9 @@ export const Link = styled.a`
 
 /** Marks the cell as outbound and leans out of it under the cursor. */
 export const Jump = styled(Icon)`
+  flex-shrink: 0;
   width: 12px;
   height: 12px;
-  margin-left: auto;
   color: ${({ theme }) => theme.colors.mutedForeground};
   transition:
     color ${duration.fast}ms ease,
@@ -80,9 +77,16 @@ export const Name = styled.span`
   font-weight: 500;
 
   svg:first-child {
+    flex-shrink: 0;
     width: 16px;
     height: 16px;
   }
+`;
+
+export const Title = styled.span`
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 `;
 
 export const Handle = styled.span`

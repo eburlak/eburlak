@@ -1,3 +1,4 @@
+import CodepenIcon from '@/assets/icons/codepen.svg';
 import GithubIcon from '@/assets/icons/github.svg';
 import LinkedinIcon from '@/assets/icons/linkedin.svg';
 import MailIcon from '@/assets/icons/mail.svg';
@@ -39,6 +40,12 @@ export const socials: Social[] = [
     handle: '@eburlak',
     href: 'https://www.npmjs.com/~eburlak',
     icon: NpmIcon,
+  },
+  {
+    name: 'CodePen',
+    handle: '@eburlak',
+    href: 'https://codepen.io/eburlak',
+    icon: CodepenIcon,
   },
   {
     name: 'Telegram',
