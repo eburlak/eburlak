@@ -30,7 +30,7 @@ export const generateMetadata = async (): Promise<Metadata> => {
   const t = await getTranslations('profile');
 
   const name = t('name');
-  const title = `${name} - ${profile.jobTitle}`;
+  const title = `${name} - ${t('jobTitle')}`;
   const description = t('about.0', { years: getExperienceYears() });
 
   return {

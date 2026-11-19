@@ -31,7 +31,7 @@ export const getProfileJsonLd = async () => {
       alternateName: await getAlternateNames(locale),
       givenName: t('firstName'),
       familyName: t('lastName'),
-      jobTitle: profile.jobTitle,
+      jobTitle: t('jobTitle'),
       description: t('about.0', { years: getExperienceYears() }),
       url: SITE_URL,
       image: new URL(profile.avatar, SITE_URL).toString(),

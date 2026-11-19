@@ -35,7 +35,7 @@ const Profile = () => {
         </S.Name>
 
         <S.JobTitle>
-          {profile.jobTitle} {tCommon('at')} <strong>{profile.company}</strong>
+          {t('jobTitle')} {tCommon('at')} <strong>{profile.company}</strong>
         </S.JobTitle>
 
         <S.Location

@@ -12,13 +12,12 @@ const email = 'eugeneburlak@yandex.ru';
 
 export const profile = {
   username: 'eburlak',
-  jobTitle: 'Senior Frontend Developer',
   company: 'edna',
   companyUrl: 'https://edna.ru',
   locationLink: 'https://yandex.ru/maps/146/simferopol/',
   avatar: '/me.jpg',
   email,
-  available: false,
+  available: true,
 };
 
 export type Social = {

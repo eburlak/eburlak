@@ -14,6 +14,7 @@ import ReduxIcon from '@/assets/icons/redux.svg';
 import SassIcon from '@/assets/icons/sass.svg';
 import StorybookIcon from '@/assets/icons/storybook.svg';
 import StyledComponentsIcon from '@/assets/icons/styledComponents.svg';
+import SwaggerIcon from '@/assets/icons/swagger.svg';
 import TestingLibraryIcon from '@/assets/icons/testingLibrary.svg';
 import TypescriptIcon from '@/assets/icons/typescript.svg';
 import ViteIcon from '@/assets/icons/vite.svg';
@@ -175,6 +176,12 @@ export const stack: StackGroup[] = [
         icon: FigmaIcon,
         href: 'https://figma.com',
         brand: '#f24e1e',
+      },
+      {
+        name: 'Swagger',
+        icon: SwaggerIcon,
+        href: 'https://swagger.io',
+        brand: '#85ea2d',
       },
     ],
   },

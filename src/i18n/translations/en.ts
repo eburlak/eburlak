@@ -21,13 +21,16 @@ const en = {
     firstName: 'Evgeniy',
     lastName: 'Burlak',
     location: 'Simferopol · remote only',
+    jobTitle: 'Senior Frontend Developer',
     availability: 'Open to new opportunities',
     verified: 'verified',
     about: [
-      'Frontend developer with {years, plural, one {# year} other {# years}} of experience. The last 4.5 of them on product work at edna, a SaaS company in digital communications.',
-      'Sole frontend developer on Chatflow: built the entire frontend from scratch. On chat-center I rewrite the legacy code of an eight-year-old codebase - class components to function components, SCSS to styled-components, around 80% done. The mobile version I built single-handedly, from scratch.',
-      'I contribute to the shared component library used by 8+ frontend developers across the company, and do code reviews, technical interviews and mentoring.',
-      'A separate specialty is data visualisation: four years on exchange charts and technical-analysis tooling, and my own TypeScript charting library maintained since 2018.',
+      'JavaScript developer with {years, plural, one {# year} other {# years}} of experience, mostly frontend on React and TypeScript. Since 2022 doing product work at edna, a SaaS company in digital communications.',
+      'Sole frontend developer on Chatflow, built the entire frontend from scratch. On chat-center I rewrite the legacy code of an eight-year-old codebase - class components to function components, SCSS to styled-components, around 80% done. The mobile version I built single-handedly, from scratch.',
+      'I contribute to the shared component library used by frontend developers from other teams across the company, and do code reviews, technical interviews and mentoring.',
+      'A separate specialty is data visualisation, with four years on exchange charts and technical-analysis tooling.',
+      'I do open source - TypeScript libraries on npm with no dependencies and no framework lock-in. The main one is my own charting library, maintained since 2018. There are also input masks, toast notifications and tooltips.',
+      'On Node.js, custom bots for Chatflow and pet projects built with AI agents, an auth service (Fastify, PostgreSQL, JWT) and a RAG service (Ollama, pgvector).',
     ],
   },
   stack: {
@@ -42,23 +45,24 @@ const en = {
     present: 'Present',
     remote: 'Remote',
     edna: {
-      title: 'Frontend Developer',
+      title: 'Senior Frontend Developer',
       points: [
-        'Chatflow: designed and built the whole product frontend from scratch - the only frontend developer in a team of three.',
+        'On Chatflow I designed and built the whole product frontend from scratch - the only frontend developer in a team of three.',
         'Messaging channels (WhatsApp, Telegram, VK Max), conversation history, supervisor monitoring, and access control across three roles.',
-        'Customer-facing bots for WhatsApp and VK Max on Node.js, talking to the backend over REST and WebSocket.',
-        'chat-center: moved around 80% of an eight-year-old codebase from class to function components and from SCSS to styled-components, without pausing product work.',
+        'Customer-facing bots for WhatsApp and VK Max on Node.js, talking to the backend over REST and WebSocket and exchanging messages through Apache Pulsar queues.',
+        'On chat-center I moved around 80% of an eight-year-old codebase from class to function components and from SCSS to styled-components, without pausing product work.',
         'Built the mobile version of the interface from scratch on my own and took part in the full interface redesign.',
-        'Helped introduce testing: the project had none, now every new piece of code is covered with Jest and @testing-library/react.',
-        'I take part in estimation and grooming: work through requirements with the analyst and the team before a task enters the sprint, shape the spec from the frontend side and write spikes where the implementation is not obvious.',
-        'I contribute to the internal component library used by 8+ frontend developers, ran around 10 technical interviews and mentored a colleague from junior to middle.',
+        'Helped introduce testing, the project had none and now every new piece of code is covered with Jest and @testing-library/react.',
+        'I put together screen designs for chat-center features with AI agents (a prototype from the spec on design-system tokens, then the layout moved into Figma).',
+        'I take part in estimation and grooming, work through requirements with the analyst and the team before a task enters the sprint, shape the spec from the frontend side and write spikes where the implementation is not obvious.',
+        'I contribute to the internal component library used by frontend developers from other teams, ran around 10 technical interviews and mentored a colleague from junior to middle.',
       ],
     },
     sobix: {
       title: 'Frontend Developer',
       points: [
         'Interfaces for a forex exchange and a crypto wallet.',
-        'In-house exchange charting package: candlestick charts, technical-analysis tools and indicators.',
+        'In-house exchange charting package covering various chart types, with technical-analysis tools and indicators.',
         'Desktop builds on Electron for macOS, Windows and Linux, and an Android build on Cordova.',
       ],
     },
@@ -67,6 +71,7 @@ const en = {
       points: [
         'WordPress sites built full-stack, from markup to the server side.',
         'Frontend integration into Yii2 projects.',
+        'For a few months combined development with a project manager role, working with clients and setting tasks for the team.',
       ],
     },
   },
@@ -88,13 +93,13 @@ const en = {
     source: 'Source',
     empty: 'n/a',
     burlak:
-      'My main personal project, maintained since 2018. A TypeScript charting library written from scratch, with no graphics libraries among its dependencies.\nChart types: combined, radar, funnel, pie and donut - on a shared rendering core with one settings system.\nUtilities in the package: HTTP requests, dates, cookies, an event emitter, DOM and URL helpers.',
+      'My main personal project, maintained since 2018. A TypeScript charting library written from scratch, with no graphics libraries among its dependencies.\nCombined, radar, pie and donut charts and a funnel - on a shared rendering core with one settings system.\nUtilities in the package for HTTP requests, dates, cookies, an event emitter, DOM and URL.',
     maskit:
-      'Input masks: declarative mask syntax, wiring through data attributes, lifecycle callbacks and cyrillic support.',
+      'Input masks, declarative mask syntax, wiring through data attributes, lifecycle callbacks and cyrillic support.',
     notificit:
-      'Notifications: configurable animations, close modes, a global loading indicator and class-name customisation.',
+      'Notifications, configurable animations, close modes, a global loading indicator and class-name customisation.',
     '@eburlak/tooltip':
-      'Tooltips: one shared element gliding between anchors, wiring through data attributes, themes and accessibility out of the box.',
+      'Tooltips, one shared element gliding between anchors, wiring through data attributes, themes and accessibility out of the box.',
   },
   notFound: {
     status: 'Page not found',

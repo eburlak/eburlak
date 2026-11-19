@@ -19,7 +19,7 @@ const { colors } = themes[themeConstant.fallback as keyof typeof themes];
 
 const photoWidth = 520;
 
-export const alt = `${messages.name} - ${profile.jobTitle}`;
+export const alt = `${messages.name} - ${messages.jobTitle}`;
 
 const Image = () =>
   new ImageResponse(
@@ -54,7 +54,7 @@ const Image = () =>
             {messages.name}
           </div>
           <div style={{ fontSize: 36, color: colors.mutedForeground }}>
-            {profile.jobTitle}
+            {messages.jobTitle}
           </div>
           <div
             style={{
