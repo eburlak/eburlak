@@ -26,7 +26,7 @@ const en = {
     verified: 'verified',
     about: [
       'JavaScript developer with {years, plural, one {# year} other {# years}} of experience, mostly frontend on React and TypeScript. Since 2022 doing product work at edna, a SaaS company in digital communications.',
-      'Sole frontend developer on Chatflow, built the entire frontend from scratch. On chat-center I rewrite the legacy code of an eight-year-old codebase - class components to function components, SCSS to styled-components, around 80% done. The mobile version I built single-handedly, from scratch.',
+      'Sole frontend developer on Chatflow, a SaaS for analysing how sales and support staff talk to customers, built the entire frontend from scratch. On chat-center, a contact-centre platform, I rewrite the legacy code of an eight-year-old codebase - class components to function components, SCSS to styled-components, around 80% done. The mobile version I built single-handedly, from scratch.',
       'I contribute to the shared component library used by frontend developers from other teams across the company, and do code reviews, technical interviews and mentoring.',
       'A separate specialty is data visualisation, with four years on exchange charts and technical-analysis tooling.',
       'I do open source - TypeScript libraries on npm with no dependencies and no framework lock-in. The main one is my own charting library, maintained since 2018. There are also input masks, toast notifications and tooltips.',
@@ -47,10 +47,10 @@ const en = {
     edna: {
       title: 'Senior Frontend Developer',
       points: [
-        'On Chatflow I designed and built the whole product frontend from scratch - the only frontend developer in a team of three.',
+        'On Chatflow, a SaaS for analysing how sales and support staff talk to customers, I designed and built the whole product frontend from scratch - the only frontend developer in a team of three.',
         'Messaging channels (WhatsApp, Telegram, VK Max), conversation history, supervisor monitoring, and access control across three roles.',
         'Customer-facing bots for WhatsApp and VK Max on Node.js, talking to the backend over REST and WebSocket and exchanging messages through Apache Pulsar queues.',
-        'On chat-center I moved around 80% of an eight-year-old codebase from class to function components and from SCSS to styled-components, without pausing product work.',
+        'On chat-center, a contact-centre platform, I moved around 80% of an eight-year-old codebase from class to function components and from SCSS to styled-components, without pausing product work.',
         'Built the mobile version of the interface from scratch on my own and took part in the full interface redesign.',
         'Helped introduce testing, the project had none and now every new piece of code is covered with Jest and @testing-library/react.',
         'I put together screen designs for chat-center features with AI agents (a prototype from the spec on design-system tokens, then the layout moved into Figma).',
