@@ -16,6 +16,7 @@
 ## Now
 
 - 💼 Building product frontends in React and TypeScript
+- 🔌 Integrating messengers into products: Node.js bots, reverse-engineered WebSocket protocols
 - 📈 Maintaining my own TypeScript charting library and a few small npm packages
 
 ## Stack

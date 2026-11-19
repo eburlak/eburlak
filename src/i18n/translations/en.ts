@@ -50,6 +50,8 @@ const en = {
         'On Chatflow, a SaaS for analysing how sales and support staff talk to customers, I designed and built the whole product frontend from scratch - the only frontend developer in a team of three.',
         'Messaging channels (WhatsApp, Telegram, VK Max), conversation history, supervisor monitoring, and access control across three roles.',
         'Customer-facing bots for WhatsApp and VK Max on Node.js, talking to the backend over REST and WebSocket and exchanging messages through Apache Pulsar queues.',
+        'Reverse-engineered the VK Max web client: intercepted and analysed its WebSocket traffic, worked out the messaging protocol, built a prototype and then my own connector that integrated VK Max into the product.',
+        'Reverse-engineered a third-party WhatsApp library to work out how it operates under the hood and which gateways it relies on.',
         'On chat-center, a contact-centre platform, I moved around 80% of an eight-year-old codebase from class to function components and from SCSS to styled-components, without pausing product work.',
         'Built the mobile version of the interface from scratch on my own and took part in the full interface redesign.',
         'Helped introduce testing, the project had none and now every new piece of code is covered with Jest and @testing-library/react.',
