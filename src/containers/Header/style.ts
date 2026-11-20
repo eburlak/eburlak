@@ -72,12 +72,12 @@ export const Actions = styled.div`
 `;
 
 export const Nav = styled.nav`
-  display: none;
+  display: flex;
   align-items: center;
   gap: 16px;
 
   ${media.small} {
-    display: flex;
+    display: none;
   }
 `;
 

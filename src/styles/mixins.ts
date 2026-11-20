@@ -4,9 +4,22 @@ import { font } from './theme';
 
 export const dashedEdge = css`1px dashed ${({ theme }) => theme.colors.edge}`;
 
-export const getColumnsCss = (columns: number) => css`
-  flex: 0 0 calc(100% / ${columns});
+export const flexContainer = ({
+  count,
+  gap,
+}: {
+  count: number;
+  gap: string;
+}) => css`
+  --count: ${count};
+  --gap: ${gap};
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap);
 `;
+
+export const flexItem =
+  'width: calc(100% / var(--count) - ((var(--count) - 1) * var(--gap)) / var(--count));';
 
 /**
  * Dashed rule anchored to the element edge but drawn across the whole viewport.

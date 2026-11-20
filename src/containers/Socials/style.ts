@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import Icon from '@/components/Icon';
-import { dashedEdge, getColumnsCss } from '@/styles/mixins';
+import { dashedEdge, flexContainer, flexItem } from '@/styles/mixins';
 import { duration, easing } from '@/styles/animations';
 import { font, media } from '@/styles/theme';
 
@@ -21,22 +21,21 @@ const getEdgesCss = (columns: number) => css`
   }
 `;
 
-const getGridCss = (columns: number) => css`
-  ${getColumnsCss(columns)}
-  ${getEdgesCss(columns)}
-`;
-
 export const Wrapper = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
+  ${flexContainer({ count: 3, gap: '0px' })}
+
+  ${media.small} {
+    --count: 1;
+  }
 `;
 
 export const Item = styled.li`
   min-width: 0;
-  ${getGridCss(1)}
+  ${flexItem}
+  ${getEdgesCss(3)}
 
   ${media.small} {
-    ${getGridCss(3)}
+    ${getEdgesCss(1)}
   }
 `;
 

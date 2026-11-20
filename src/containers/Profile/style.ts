@@ -11,13 +11,13 @@ export const Wrapper = styled.div`
 export const AvatarFrame = styled.div`
   position: relative;
   flex-shrink: 0;
-  width: 128px;
-  height: 128px;
+  width: 160px;
+  height: 160px;
   border-right: ${dashedEdge};
 
   ${media.small} {
-    width: 160px;
-    height: 160px;
+    width: 128px;
+    height: 128px;
   }
 `;
 
@@ -35,13 +35,13 @@ export const Name = styled.h1`
   align-items: center;
   gap: 6px;
   font-family: ${font.mono};
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 700;
   letter-spacing: -0.03em;
   line-height: 1.2;
 
   ${media.small} {
-    font-size: 24px;
+    font-size: 20px;
   }
 
   svg {

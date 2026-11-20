@@ -217,7 +217,7 @@ export const layout = {
 };
 
 export const media = {
-  small: '@media (min-width: 640px)',
+  small: '@media (max-width: 639px)',
 };
 
 const build = (colors: typeof light, shadow: string) => ({

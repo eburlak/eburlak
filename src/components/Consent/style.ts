@@ -23,8 +23,9 @@ export const Wrapper = styled.div`
   left: 50%;
   z-index: 60;
   display: flex;
-  flex-direction: column;
-  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
   width: 100%;
   max-width: ${layout.contentWidth};
   padding: 16px;
@@ -40,10 +41,9 @@ export const Wrapper = styled.div`
   }
 
   ${media.small} {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: 24px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
   }
 `;
 
